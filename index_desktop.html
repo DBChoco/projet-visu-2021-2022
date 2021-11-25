@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" http-equiv="Content-Type" content="text/html" name="viewport">
+        <title>Index_desktop</title>
+        <link rel="stylesheet" media="all" href="style_desktop_2.css">
+    </head>
+    <body>
+        <head id="logo">
+            <h1>LOGO</h1>
+            <!--TODO bar de recherche-->
+        </head>
+        <section class="menu">
+            <div class="navbar">
+                <a href="#home">Home</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a id="note">Note</a>
+                    <a id="price">Prix</a>
+                  </div>
+                </div>
+              </div>  
+        </section>
+        <section class="underMenu">
+            <div class="left">
+               <div class="superFilter">
+                   <div class="location">
+                       <h2>Location</h2>
+                       <input type="text" id="lieux" value="Lieux">
+                        </br>
+                        </br>
+                       <input type="number" id="distance" value="0" min="0" max="20000">
+                   </div>
+               </div>
+               <div class="filter">
+                    <h2>Filtre</h2>
+                    <div class="prix">
+                        <h3>Prix</h3>
+                        <form class="priceForm">
+                            <input type="number" id="minPrice" value="0" width="1%" height="15%" min="0">
+                            <p>à</p>
+                            <input type="number" id="maxPrice" value="999" min="0">
+                        </form>
+                    </div>
+                    <div class="meal">
+                        <form class="mealForm">
+                            <div class="poisson">
+                                <h3>Poissons</h3>
+                                <input type="checkbox" id="poisson" checked>
+                            </div>
+                            <div class="humain">
+                                <h3>Humains</h3>
+                                <input type="checkbox" id="humain" checked>
+                            </div>
+                            <a id="#"><h3>Nationalité</h3></a>
+                            <a id="#"><h3>Partie du corps</h3></a>
+                            <!--TODO menu des deux parties au dessus-->
+                        </form>
+                    </div>
+                    <div class="note">
+                        <h3>Note</h3>
+                        <form class="noteForm">
+                            <input type="number" id="minNote" value="0" width="1%" height="15%" min="0" max="5">
+                            <p>à</p>
+                            <input type="number" id="maxNote" value="5" min="1" max="5">
+                        </form>
+                    </div>
+                    <div class="dangerZone">
+                        <form class="dangerZoneForm">
+                            <h3>Zone à risque</h3>
+                            <input type="checkbox" id="dangerZone">
+                        </form>
+                    </div>
+               </div>
+            </div>
+            <div class="right">
+                <div class="rightTop">
+                    <p>Haut</p>
+                    <p>Ici sera la liste des restaurant</p>
+                    <!--TODO la liste-->
+                </div>
+                <div class="rightBottom">
+                    <p>Bas</p>
+                    <p>Ici sera la carte</p>
+                    <!--TODO la carte-->
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
