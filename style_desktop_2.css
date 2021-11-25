@@ -1,0 +1,162 @@
+* {
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    background-color:white;
+}
+
+.menu {
+    height: 10%;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #333;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: right;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: white;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+.underMenu {
+    height: 90%;
+}
+
+.left {
+    float: left;
+    width: 30%
+}
+
+.location input {
+    margin-left: 5%;
+}
+
+.priceForm{
+    display: flex;
+}
+
+.priceForm input{
+    width: 20%;
+    height: 50%;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    margin-right: 5%;
+    margin-bottom: 0%;
+}
+
+.poisson, .humain{
+    display: flex;
+}
+
+.poisson h3, .humain h3{
+    margin-right: 10%;
+}
+
+.mealForm input, h3{
+    margin: 2%;
+    display: flex;
+}
+
+.noteForm{
+    display: flex;
+}
+
+.noteForm input{
+    width: 20%;
+    height: 50%;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    margin-right: 5%;
+    margin-bottom: 0%;
+}
+
+.dangerZoneForm{
+    display: flex;
+}
+
+.dangerZoneForm h3{
+    margin-right: 10%;
+}
+
+.right {
+    float: right;
+    clear: right;
+    width: 70%;
+    text-align: left;
+    height: 100%;
+}
+
+.rightTop{
+    height: 50%;
+    vertical-align: top;
+}
+
+.rightBottom{
+    height: 50%;
+    vertical-align: bottom;
+}
