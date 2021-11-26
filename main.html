@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>SharkEats</title>
+</head>
+<head>
+    <link rel="stylesheet"  type="text/css" href="styleSheet.css">
+    <link rel="stylesheet" type="text/css" href="filterStyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="dropMenuSSheet.css">
+  </head> 
+<body>
+
+<header><!--Header: superior part of the website-->
+    <!--TODO add logo and some space-->
+</header>
+
+<nav> 
+    <section class="menu">
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a id="note">Note</a>
+                <a id="price">Prix</a>
+              </div>
+            </div>
+          </div>  
+    </section>
+</nav>
+
+<aside> 
+       <div class="filter">
+           <div class="location">
+               <h2>Location</h2>
+               <input type="text" id="locations" value="locations">
+                </br>
+                </br>
+               <input type="number" id="distance" value="0" min="0" max="20000">
+           </div>
+            <h2>Filtre</h2>
+            <div class="prix">
+                <h3>Prix</h3>
+                <form class="priceForm">
+                    <input type="number" id="minPrice" value="0" width="1%" height="15%" min="0">
+                    <p>à</p>
+                    <input type="number" id="maxPrice" value="999" min="0">
+                </form>
+            </div>
+            <div class="meal">
+                <form class="mealForm">
+                    <div class="fish">
+                        <h3>Poissons</h3>
+                        <input type="checkbox" id="poisson" checked>
+                    </div>
+                    <div class="human">
+                        <h3>Humains</h3>
+                        <input type="checkbox" id="human" checked>
+                    </div>
+                    <a id="#"><h3>Nationality</h3></a>
+                    <a id="#"><h3>Corps part</h3></a>
+                    <!--TODO menu des deux parties au dessus-->
+                </form>
+            </div>
+            <div class="note">
+                <h3>Note</h3>
+                <form class="noteForm">
+                    <input type="number" id="minNote" value="0" width="1%" height="15%" min="0" max="5">
+                    <p>à</p>
+                    <input type="number" id="maxNote" value="5" min="1" max="5">
+                </form>
+            </div>
+            <div class="dangerZone">
+                <form class="dangerZoneForm">
+                    <h3>Zone à risque</h3>
+                    <input type="checkbox" id="dangerZone">
+                </form>
+            </div>
+</aside>
+
+<section id = "mainArea">
+    <article id = "restaurantList">
+    </article>
+
+    <article id = "restaurantMap">
+    </article>
+</section>
+
+
+</body>
+</html> 

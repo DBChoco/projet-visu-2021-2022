@@ -1,0 +1,41 @@
+link {
+    display: none;
+  }
+
+body {
+    background-color: coral;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    height:180px;
+    background-color: seagreen;
+}
+
+aside {
+    float: left;
+    background-color: seagreen;
+    height:1080px;
+    width: fit-content;;
+}
+
+input {
+    background-color:white;
+}
+
+#restaurantList{
+    width: 100%;
+    height: 540px;
+    background-color: turquoise;
+}
+
+#restaurantMap{
+    width: 100%;
+    height: 540px;
+    background-color: yellowgreen;
+}
+
+
+
+
+
