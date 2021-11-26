@@ -16,7 +16,7 @@ aside {
     float: left;
     background-color: seagreen;
     height:1080px;
-    width: fit-content;;
+    width:max-content;
 }
 
 input {
@@ -35,6 +35,11 @@ input {
     background-color: yellowgreen;
 }
 
+.logo{
+    width: 180px;
+    height: 180px;
+    margin-left: 10px;
+}
 
 
 
