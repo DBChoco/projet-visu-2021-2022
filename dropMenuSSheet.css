@@ -73,3 +73,11 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  body, html {
+    background-color: coral;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}

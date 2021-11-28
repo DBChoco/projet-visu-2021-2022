@@ -7,35 +7,11 @@
 <head>
     <script src="jquery/jquery-3.6.0.min.js"></script>
     <script src="jquery/jquery-ui.js"></script>
+    <script src="javaScript.js"></script> 
     <link rel="stylesheet" href="jquery/jquery-ui.css">
     <link rel="stylesheet"  type="text/css" href="styleSheet.css">
     <link rel="stylesheet" type="text/css" href="filterStyleSheet.css">
     <link rel="stylesheet" type="text/css" href="dropMenuSSheet.css">
-    <script>
-          $( function() {
-            $( "#price-range" ).slider({
-            range: true,
-            min: 0,
-            max: 200,
-            values: [ 10, 150 ],
-            slide: function( event, ui ) {
-                $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-            }
-            });
-            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-            " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-        } );
-    </script>
-    <script>
-      $( function() {
-        $( "#note-slider" ).slider({
-            values: [1],
-            min: 1,
-            max: 5,
-            }
-        );
-      } );
-    </script>
   </head> 
 <body>
 
@@ -102,11 +78,23 @@
 </aside>
 
 <section id = "mainArea">
-    <article id = "restaurantList">
-    </article>
 
-    <article id = "restaurantMap">
-    </article>
+        <div class="panel-container-vertical">
+
+            <div class="panel-top">
+                top panel
+            </div>
+
+            <div class="splitter-horizontal">
+            </div>
+
+            <div class="panel-bottom">
+                bottom panel
+            </div>
+        </div>
+
+    </div>
+
 </section>
 
 
