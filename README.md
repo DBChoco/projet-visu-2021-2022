@@ -4,17 +4,12 @@ Projet visualisation Charleroi 2021-2022
 <pre>
 
 Todo-list:
--Make logo
--Add logo to header
 -Make sections of website resize automatically, depending on the size of the window
--Change filters "price" and "note" to a slider
 -Make buttons bigger generally
 -Make a database for the restaurants (includes locations, notes, descriptions and random photos)
-
-Not to do yet (would make the code too heavy to change)
 -Make a map
 -Make a list
-  Let's finish the main structure of the page first, then we can add these features.
+
 
 
 Lisibility rules:
