@@ -5,7 +5,6 @@ Projet visualisation Charleroi 2021-2022
 
 Todo-list:
 -Make sections of website resize automatically, depending on the size of the window
--Make buttons bigger generally
 -Make a database for the restaurants (includes locations, notes, descriptions and random photos)
 -Make a map
 -Make a list
