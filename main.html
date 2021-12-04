@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="filterStyleSheet.css">
     <link rel="stylesheet" type="text/css" href="dropMenuSSheet.css">
     <link rel="stylesheet" href="mapStyleSheet.css">
+    <link rel="stylesheet" href="slider.css">
   </head> 
 <body>
 
@@ -58,15 +59,73 @@
                 <form class="mealForm">
                     <div class="fish">
                         <h3>Fish</h3>
-                        <input type="checkbox" id="poisson" checked class="larger">
+                        <label class="switch">
+                            <input type="checkbox" id="human" checked id="poisson" >
+                            <span class="slider"></span>
+                          </label>
                     </div>
                     <div class="human">
                         <h3>Humans</h3>
-                        <input type="checkbox" id="human" checked class="larger">
+                        <label class="switch">
+                            <input type="checkbox" id="human" checked>
+                            <span class="slider"></span>
+                          </label>
                     </div>
-                    <a id="#"><h3>Nationality</h3></a>
+                    <div class = "nationality-filter">
+                        <h3>Nationality</h3>
+                        <button type="button" class="collapsible">Choose nationality</button>
+                        <div class="content">
+                            <div class = "nationality">
+                                <label>
+                                    African: &nbsp;&nbsp;
+                                    <input type="checkbox" id="african" checked class = "larger">
+                                </label>
+                            </div>
+                            
+                            <div class = "nationality">
+                                <label>
+                                    Asian: &nbsp;&nbsp;
+                                    <input type="checkbox" id="african" checked class = "larger">
+                                </label>
+                            </div>
+
+                            <div class = "nationality">
+                                <label>
+                                    Ben Max & Sim: &nbsp;&nbsp;
+                                    <input type="checkbox" id="african" class = "larger">
+                                </label>
+                            </div>
+
+                            <div class = "nationality">
+                                <label>
+                                    Chocolat: &nbsp;&nbsp;
+                                    <input type="checkbox" id="african" checked class = "larger">
+                                </label>
+                            </div>
+                            
+
+                        </div> 
+                        <script>
+                            var coll = document.getElementsByClassName("collapsible");
+                            var i;
+
+                            for (i = 0; i < coll.length; i++) {
+                            coll[i].addEventListener("click", function() {
+                                this.classList.toggle("active");
+                                var content = this.nextElementSibling;
+                                if (content.style.display === "block") {
+                                content.style.display = "none";
+                                } else {
+                                content.style.display = "block";
+                                }
+                            });
+                            } 
+                        </script>
+                    </div>
+
+                  
                     <a id="#"><h3>Corps part</h3></a>
-                    <!--TODO menu des deux parties au dessus-->
+                    <!--TODO menu des 1 parties au dessus-->
                 </form>
             </div>
             <div class="note">
@@ -76,7 +135,10 @@
             <div class="dangerZone">
                 <form class="dangerZoneForm">
                     <h3>Dangerous Zones</h3>
-                    <input type="checkbox" id="dangerZone" class="larger">
+                    <label class="switch">
+                        <input type="checkbox" id="dangerZone">
+                        <span class="slider"></span>
+                      </label>
                 </form>
             </div>
 </aside>
