@@ -1,10 +1,8 @@
-
 body, html {
     background-color: coral;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    overflow: auto;
 }
 
 header{
@@ -38,55 +36,72 @@ footer{
     margin-left: 10px;
 }
 
-.splitter {
-    flex: 0 0 auto;
-    width: 18px;  
-    background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
-    min-height: 200px;
-    cursor: col-resize;  
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #cbd5e0;
+  flex:1;
+  height: 100vw;
+  background-color: cadetblue;
+}
+.container__top {
+  height: 30%;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  background-color: blueviolet;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.resizer {
+  background-color: #cbd5e0;
+  cursor: ns-resize;
+  height: 5px;
+  width: 100%;
+}
+.container__bottom {
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  background-color: blue;
+}
 
-  .panel-container-vertical {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    border: 1px solid silver;
-    overflow: hidden;
-  }
-  
-  .panel-top {
-    flex: 0 0 auto;
-    /* only manually resize */
-    padding: 10px;
-    height: 550px;
-    min-height: 200px;
-    width: 100%;
-    white-space: nowrap;
-    background: #838383;
-    color: white;
-    overflow: scroll
-  }
-  
-  .splitter-horizontal {
-    flex: 0 0 auto;
-    height: 18px;
-    background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/hsizegrip.png) center center no-repeat #535353;
-    cursor: row-resize;
-  }
-  
-  .panel-bottom {
-    flex: 1 1 auto;
-    /* resizable */
-    padding: 10px;
-    height: 100vw;
-    min-height: 50px;
-    background: #eee;
-  }
+.resto{
+  background-color: black;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 3px;
+  margin-right: 5px;
+  text-align:center;
+  float: left;
+}
 
-  .resto{
-    background-color: black;
-    width: 100vw;
-    height: 200px;
-    margin-bottom: 3px;
-    margin-right: 5px;
-  }
+.restoPhoto{
+  height: 70%;
+  padding-top: 15%;
+  padding-left: 15%;
+}
+
+.restoPhotoDiv{
+  height: 100%;
+  width: fit-content;
+  float: left;
+}
+
+.restoTextDiv{
+  width: 20%;
+  float: left;
+  padding-left: 40px;
+  padding-top: 30px;
+  flex-direction: column;
+}
+
+.restoTitle, .restoDescription{
+  color: white;
+  text-align: left;
+  margin: 0;
+}
+
+.restoTitle{
+  font-size: 24px;
+}

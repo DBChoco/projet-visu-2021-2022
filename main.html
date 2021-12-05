@@ -10,6 +10,7 @@
     <script src="javaScript.js"></script> 
     <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- d3.js import -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>   <!-- Mapbox library import -->
+    <script src= 'split.js'> </script>
     
     <link rel="stylesheet" href="jquery/jquery-ui.css">
     <link rel="stylesheet"  type="text/css" href="styleSheet.css">
@@ -143,39 +144,15 @@
             </div>
 </aside>
 
-<section id = "mainArea">
-
-        <div class="panel-container-vertical">
-
-            <div class="panel-top" id = "panel-top">
-                <script>
-                    function createResto(container){
-                        var newDiv = document.createElement('div')
-                        newDiv.setAttribute("id", "resto");
-                        newDiv.setAttribute("class", "resto");
-
-                        container.append(newDiv)
-                    }
-
-                    var counts = ['1','2','3','4'];
-                    var listContainer = document.getElementById('panel-top');
-                    counts.forEach(function(count) {
-                        createResto(listContainer)
-                    });
-                </script>
-            </div>
-
-            <div class="splitter-horizontal">
-            </div>
-
-            <div class="panel-bottom">
-                <div id="map"></div>
-            </div>
+    <div class="container">
+        <div class="container__top" id = "container__top">
+            <script src="resto.js"></script>
         </div>
-
+        <div class="resizer" data-direction="vertical"></div>
+        <div class="container__bottom">
+            <div id="map"></div>
+        </div>
     </div>
-
-</section>
 
 <script src="mapScript.js"></script> 
 
