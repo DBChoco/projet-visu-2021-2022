@@ -64,6 +64,7 @@ footer{
     white-space: nowrap;
     background: #838383;
     color: white;
+    overflow: scroll
   }
   
   .splitter-horizontal {
@@ -80,4 +81,12 @@ footer{
     height: 100vw;
     min-height: 50px;
     background: #eee;
+  }
+
+  .resto{
+    background-color: black;
+    width: 100vw;
+    height: 200px;
+    margin-bottom: 3px;
+    margin-right: 5px;
   }

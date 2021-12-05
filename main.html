@@ -147,8 +147,22 @@
 
         <div class="panel-container-vertical">
 
-            <div class="panel-top">
-                top panel
+            <div class="panel-top" id = "panel-top">
+                <script>
+                    function createResto(container){
+                        var newDiv = document.createElement('div')
+                        newDiv.setAttribute("id", "resto");
+                        newDiv.setAttribute("class", "resto");
+
+                        container.append(newDiv)
+                    }
+
+                    var counts = ['1','2','3','4'];
+                    var listContainer = document.getElementById('panel-top');
+                    counts.forEach(function(count) {
+                        createResto(listContainer)
+                    });
+                </script>
             </div>
 
             <div class="splitter-horizontal">
