@@ -7,8 +7,9 @@ Todo-list:
 -TOP PRIORITY: Fix the split view page.
 -Make sections of website resize automatically, depending on the size of the window
 -Make a database for the restaurants (includes locations, notes, descriptions and random photos)
--Make a map
+-Make the map better (less laggy, take full size of bottom container)
 -Make a list
+-Fix size of vertical container (it's too big)
 
 
 
