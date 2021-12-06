@@ -1,8 +1,6 @@
 # projet-visu-2021-2022
 Projet visualisation Charleroi 2021-2022
 
-![alt text](https://github.com/DBChoco/projet-visu-2021-2022/blob/main/images/SharkEatsLogo.png)
-
 <pre>
 
 Todo-list:
@@ -18,3 +16,5 @@ Lisibility rules:
 -Don't make useless complicated stuff :^) (yes I'm looking at you Maxim lol)
 
 </pre>
+
+![alt text](https://github.com/DBChoco/projet-visu-2021-2022/blob/main/images/SharkEatsLogo.png)
