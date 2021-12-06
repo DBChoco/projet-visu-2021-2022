@@ -1,52 +1,75 @@
 function createResto(container){
-    var newDiv = document.createElement('div')
-    newDiv.setAttribute("class", "resto");
-
-    var photoDiv = document.createElement('div')
-    photoDiv.setAttribute("class", "restoPhotoDiv");
-    var img = document.createElement("img");
-    img.src = "images/krusty_krab.jpg"
-    img.setAttribute("class", "restoPhoto")
-    photoDiv.append(img)
-    newDiv.append(photoDiv)
-
-    var textDiv = document.createElement('div')
-    textDiv.setAttribute("class", "restoTextDiv");
-    var title = document.createElement("p")
-    title.appendChild(document.createTextNode("Krusty Krab"))
-    title.setAttribute("class", "restoTitle")
-
-    var description = document.createElement("p")
-    description.appendChild(document.createTextNode( "The best restaurant ever, probably."))
-    description.setAttribute("class", "restoDescription")
-
-    textDiv.append(title)
-    textDiv.appendChild(description)
-    newDiv.append(textDiv)
-
-    var starsDiv = document.createElement("div")
-    starsDiv.setAttribute("class", "starsDiv")
-    var stars = document.createTextNode("")
-    function createRating(number){
-        for (let i = 0; i < 5; i++){
-            if (i < number){
-                stars.textContent += "⭐"
+    
+    d3.json("sharksModified.json", function(data){  
+        
+        for (let i = 0; i < data.length; i++){
+            var newDiv = createRestoDiv()
+            addRestoPhoto(newDiv)
+            addRestoTitle(newDiv, data[i]["RestoName"], "The best restaurant ever, probably.")
+            addRestoStars(newDiv, data[i]["Stars"])
+    
+            container.append(newDiv)
+            
+            if (i % 2 == 1){
+                newDiv.style.backgroundColor = "#19d438"
             }
-            else{
-                stars.textContent += " "
+
+            console.log("it's working doc") //very important line. 
+        }
+    });
+
+
+    function createRestoDiv(){
+        var newDiv = document.createElement('div')
+        newDiv.setAttribute("class", "resto");
+        return newDiv
+    }
+
+    function addRestoPhoto(newDiv){
+        var photoDiv = document.createElement('div')
+        photoDiv.setAttribute("class", "restoPhotoDiv");
+        var img = document.createElement("img");
+        img.src = "images/krusty_krab.jpg"
+        img.setAttribute("class", "restoPhoto")
+        photoDiv.append(img)
+        newDiv.append(photoDiv)
+    }
+
+    function addRestoTitle(newDiv, titleResto, desResto){
+        var textDiv = document.createElement('div')
+        textDiv.setAttribute("class", "restoTextDiv");
+        var title = document.createElement("p")
+        title.appendChild(document.createTextNode(titleResto))
+        title.setAttribute("class", "restoTitle")
+    
+        var description = document.createElement("p")
+        description.appendChild(document.createTextNode(desResto))
+        description.setAttribute("class", "restoDescription")
+    
+        textDiv.append(title)
+        textDiv.appendChild(description)
+        newDiv.append(textDiv)
+    }
+
+    function addRestoStars(newDiv, number){
+        var starsDiv = document.createElement("div")
+        starsDiv.setAttribute("class", "starsDiv")
+        var stars = document.createTextNode("")
+        function createRating(number){
+            for (let i = 0; i < 5; i++){
+                if (i < number){
+                    stars.textContent += "⭐"
+                }
+                else{
+                    stars.textContent += " "
+                }
             }
         }
-        console.log(stars)
+        createRating(number)
+        starsDiv.append(stars)
+        newDiv.append(starsDiv)
     }
-    createRating(3)
-    starsDiv.append(stars)
-    newDiv.append(starsDiv)
-
-    container.append(newDiv)
 }
 
-var counts = ['1','2','3','4','5','6'];
 var listContainer = document.getElementById('container__top');
-counts.forEach(function(count) {
-    createResto(listContainer)
-});
+createResto(listContainer)
