@@ -24,12 +24,28 @@ function createResto(container){
     textDiv.appendChild(description)
     newDiv.append(textDiv)
 
-
+    var starsDiv = document.createElement("div")
+    starsDiv.setAttribute("class", "starsDiv")
+    var stars = document.createTextNode("")
+    function createRating(number){
+        for (let i = 0; i < 5; i++){
+            if (i < number){
+                stars.textContent += "⭐"
+            }
+            else{
+                stars.textContent += " "
+            }
+        }
+        console.log(stars)
+    }
+    createRating(3)
+    starsDiv.append(stars)
+    newDiv.append(starsDiv)
 
     container.append(newDiv)
 }
 
-var counts = ['1','2','3','4'];
+var counts = ['1','2','3','4','5','6'];
 var listContainer = document.getElementById('container__top');
 counts.forEach(function(count) {
     createResto(listContainer)
