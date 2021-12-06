@@ -4,12 +4,9 @@ Projet visualisation Charleroi 2021-2022
 <pre>
 
 Todo-list:
--TOP PRIORITY: Fix the split view page.
 -Make sections of website resize automatically, depending on the size of the window
--Make a database for the restaurants (includes locations, notes, descriptions and random photos)
 -Make a map
--Make a list
-
+-Make filters work
 
 
 Lisibility rules:
