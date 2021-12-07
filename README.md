@@ -8,6 +8,7 @@ Todo-list:
 -Make filters work
 -Make the link between the second template and the restaurant's list
 -Make report
+-TODO in html template too
 
 
 Lisibility rules:
