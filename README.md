@@ -5,7 +5,6 @@ Projet visualisation Charleroi 2021-2022
 
 Todo-list:
 -Make sections of website resize automatically, depending on the size of the window
--Make a map
 -Make filters work
 
 
