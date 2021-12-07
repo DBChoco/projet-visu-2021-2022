@@ -142,21 +142,7 @@ img {vertical-align: middle;}
               </div>
             </div>
             <!--Script to hide the filter-->
-            <script> 
-              var coll = document.getElementsByClassName("collapsible");
-              var i;
-              for (i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function() {
-                  this.classList.toggle("active");
-                  var content = this.nextElementSibling;
-                  if (content.style.display === "block") {
-                    content.style.display = "none";
-                  } else {
-                    content.style.display = "block";
-                  }
-                });
-              }
-            </script>
+            <script src='static/JS/hide.js'></script>
           </div>
           <a id="#"><h3>Corps part</h3></a>
           <!--TODO menu des 1 parties au dessus-->
@@ -271,42 +257,4 @@ img {vertical-align: middle;}
   </div>
 </body>
 </html>
-
-<script type="text/javascript">
-  // Script to open and close sidebar
-  function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-  }
-
-  function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-  }
-
-  // Slideshow  Images
-  var slideIndex = 1;
-  showSlides(slideIndex);
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-  }
-</script>
+<script src='static/JS/slideShow.js'></script>
