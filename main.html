@@ -5,12 +5,13 @@
 <title>SharkEats</title>
 </head>
 <head>
+    <!--Import of the different scripts-->
     <script src="jquery/jquery-3.6.0.min.js"></script>
     <script src="jquery/jquery-ui.js"></script>
     <script src="static/JS/javaScript.js"></script> 
     <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- d3.js import -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>   <!-- Mapbox library import -->
-    
+    <!--Import of the different css-->
     <link rel="stylesheet" href="static/CSS/jquery/jquery-ui.css">
     <link rel="stylesheet"  type="text/css" href="static/CSS/styleSheet.css">
     <link rel="stylesheet" type="text/css" href="static/CSS/filterStyleSheet.css">
@@ -18,133 +19,136 @@
     <link rel="stylesheet" href="static/CSS/mapStyleSheet.css">
     <link rel="stylesheet" href="static/CSS/slider.css">
     <link rel="stylesheet" href="static/CSS/resto.css">
+    <!--Import of the icon-->
     <link rel="icon" type="image/x-icon" href="/images/SharkEatsIcon.png">
   </head> 
 <body>
 
-<header><!--Header: superior part of the website-->
-    <img src = "images/SharkEatsLogo.png" alt = "logo" class = "logo">
-</header>
+    <header><!--Header: superior part of the website-->
+        <img src = "images/SharkEatsLogo.png" alt = "logo" class = "logo">
+    </header>
 
-<nav> 
-    <section class="menu">
-        <div class="navbar">
-            <a href="#home">Home</a>
-            <div class="dropdown">
-              <button class="dropbtn">Dropdown
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a id="note">Note</a>
-                <a id="price">Prix</a>
-              </div>
+    <!--Setting up the menu-->
+    <nav>
+        <section class="menu">
+            <div class="navbar">
+                <a href="#home">Home</a>
+                <div class="dropdown">
+                <button class="dropbtn">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a id="note">Note</a>
+                    <a id="price">Prix</a>
+                </div>
+                </div>
+            </div>  
+        </section>
+    </nav>
+    <!--Setting up the filter-->
+    <aside> 
+        <div class="filter">
+            <div class="location">
+                <h2>Location</h2>
+                <input type="text" id="locations" value="locations">
+                    </br> 
+                    </br>
+                <input type="number" id="distance" value="0" min="0" max="20000">
             </div>
-          </div>  
-    </section>
-</nav>
+                <h2>Filtre</h2>
+                <div class="price">
+                    <h3>Price</h3>
+                        <div id="price-range"></div>
+                </div>
+                <div class="meal">
+                    <form class="mealForm">
+                        <div class="fish">
+                            <h3>Fish</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="human" checked id="poisson" >
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="human">
+                            <h3>Humans</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="human" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class = "nationality-filter">
+                            <h3>Nationality</h3>
+                            <button type="button" class="collapsible">Choose nationality</button>
+                            <div class="content">
+                                <div class = "nationality">
+                                    <label>
+                                        African: &nbsp;&nbsp;
+                                        <input type="checkbox" id="african" checked class = "larger">
+                                    </label>
+                                </div>
+                                
+                                <div class = "nationality">
+                                    <label>
+                                        Asian: &nbsp;&nbsp;
+                                        <input type="checkbox" id="african" checked class = "larger">
+                                    </label>
+                                </div>
 
-<aside> 
-       <div class="filter">
-           <div class="location">
-               <h2>Location</h2>
-               <input type="text" id="locations" value="locations">
-                </br> 
-                </br>
-               <input type="number" id="distance" value="0" min="0" max="20000">
-           </div>
-            <h2>Filtre</h2>
-            <div class="price">
-                <h3>Price</h3>
-                    <div id="price-range"></div>
-            </div>
-            <div class="meal">
-                <form class="mealForm">
-                    <div class="fish">
-                        <h3>Fish</h3>
+                                <div class = "nationality">
+                                    <label>
+                                        Ben Max & Sim: &nbsp;&nbsp;
+                                        <input type="checkbox" id="african" class = "larger">
+                                    </label>
+                                </div>
+
+                                <div class = "nationality">
+                                    <label>
+                                        Chocolat: &nbsp;&nbsp;
+                                        <input type="checkbox" id="african" checked class = "larger">
+                                    </label>
+                                </div>
+                                
+
+                            </div> 
+                            <script>
+                                var coll = document.getElementsByClassName("collapsible");
+                                var i;
+
+                                for (i = 0; i < coll.length; i++) {
+                                coll[i].addEventListener("click", function() {
+                                    this.classList.toggle("active");
+                                    var content = this.nextElementSibling;
+                                    if (content.style.display === "block") {
+                                    content.style.display = "none";
+                                    } else {
+                                    content.style.display = "block";
+                                    }
+                                });
+                                } 
+                            </script>
+                        </div>
+
+                    
+                        <a id="#"><h3>Corps part</h3></a>
+                        <!--TODO - menu des 1 parties au dessus-->
+                    </form>
+                </div>
+                <div class="note">
+                    <h3>Note</h3>
+                    <div id = "note-slider">
+                </div>
+                <div class="dangerZone">
+                    <form class="dangerZoneForm">
+                        <h3>Dangerous Zones</h3>
                         <label class="switch">
-                            <input type="checkbox" id="human" checked id="poisson" >
+                            <input type="checkbox" id="dangerZone">
                             <span class="slider"></span>
-                          </label>
-                    </div>
-                    <div class="human">
-                        <h3>Humans</h3>
-                        <label class="switch">
-                            <input type="checkbox" id="human" checked>
-                            <span class="slider"></span>
-                          </label>
-                    </div>
-                    <div class = "nationality-filter">
-                        <h3>Nationality</h3>
-                        <button type="button" class="collapsible">Choose nationality</button>
-                        <div class="content">
-                            <div class = "nationality">
-                                <label>
-                                    African: &nbsp;&nbsp;
-                                    <input type="checkbox" id="african" checked class = "larger">
-                                </label>
-                            </div>
-                            
-                            <div class = "nationality">
-                                <label>
-                                    Asian: &nbsp;&nbsp;
-                                    <input type="checkbox" id="african" checked class = "larger">
-                                </label>
-                            </div>
+                        </label>
+                    </form>
+                </div>
+    </aside>
 
-                            <div class = "nationality">
-                                <label>
-                                    Ben Max & Sim: &nbsp;&nbsp;
-                                    <input type="checkbox" id="african" class = "larger">
-                                </label>
-                            </div>
-
-                            <div class = "nationality">
-                                <label>
-                                    Chocolat: &nbsp;&nbsp;
-                                    <input type="checkbox" id="african" checked class = "larger">
-                                </label>
-                            </div>
-                            
-
-                        </div> 
-                        <script>
-                            var coll = document.getElementsByClassName("collapsible");
-                            var i;
-
-                            for (i = 0; i < coll.length; i++) {
-                            coll[i].addEventListener("click", function() {
-                                this.classList.toggle("active");
-                                var content = this.nextElementSibling;
-                                if (content.style.display === "block") {
-                                content.style.display = "none";
-                                } else {
-                                content.style.display = "block";
-                                }
-                            });
-                            } 
-                        </script>
-                    </div>
-
-                  
-                    <a id="#"><h3>Corps part</h3></a>
-                    <!--TODO menu des 1 parties au dessus-->
-                </form>
-            </div>
-            <div class="note">
-                <h3>Note</h3>
-                <div id = "note-slider">
-            </div>
-            <div class="dangerZone">
-                <form class="dangerZoneForm">
-                    <h3>Dangerous Zones</h3>
-                    <label class="switch">
-                        <input type="checkbox" id="dangerZone">
-                        <span class="slider"></span>
-                      </label>
-                </form>
-            </div>
-</aside>
-
+    <!--Setting up the list-->
     <div class="container">
         <div class="container__top" id = "container__top">
             <script src="static/JS/resto.js"></script>
@@ -155,7 +159,8 @@
         </div>
     </div>
 
-<script src="static/JS/mapScript.js"></script> 
+    <!--Import of the map's script-->
+    <script src="static/JS/mapScript.js"></script> 
 
 </body>
 </html> 
