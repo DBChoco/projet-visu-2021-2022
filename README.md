@@ -6,6 +6,8 @@ Projet visualisation Charleroi 2021-2022
 Todo-list:
 -Make sections of website resize automatically, depending on the size of the window
 -Make filters work
+-Make the link between the second template and the restaurant's list
+-Make report
 
 
 Lisibility rules:
