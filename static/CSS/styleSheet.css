@@ -6,8 +6,14 @@ body, html {
 }
 
 header{
-    height:180px;
+    height:125px;
     background-color: seagreen;
+}
+
+.logo{
+  width: 125px;
+  height: 125px;
+  margin-left: 10px;
 }
 
 aside {
@@ -23,18 +29,14 @@ input {
 
 input.larger {
     /*zoom : 1.5;*/
-    transform: scale(2.5);
+    transform: scale(1.5);
 }
 
 footer{
     height: 0px;
 }
 
-.logo{
-    width: 180px;
-    height: 180px;
-    margin-left: 10px;
-}
+
 
 .container {
   display: flex;
