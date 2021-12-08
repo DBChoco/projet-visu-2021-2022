@@ -12,6 +12,7 @@
     <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- d3.js import -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>   <!-- Mapbox library import -->
     <script src="/static/JS/split.js"></script>
+    <script src="/static/JS/refresh.js"></script>
     <!--Import of the different css-->
     <link rel="stylesheet" href="/jquery/jquery-ui.css">
     <link rel="stylesheet"  type="text/css" href="static/CSS/styleSheet.css">
@@ -46,6 +47,7 @@
             </div>  
         </section>
     </nav>
+
     <!--Setting up the filter-->
     <aside> 
         <div class="filter">
@@ -66,7 +68,7 @@
                         <div class="fish">
                             <h3>Fish</h3>
                             <label class="switch">
-                                <input type="checkbox" id="human" checked id="poisson" >
+                                <input type="checkbox" checked id="fish" element.indeterminate = true; onclick="refreshFish()" >
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -136,7 +138,8 @@
                 </div>
                 <div class="note">
                     <h3>Note</h3>
-                    <div id = "note-slider">
+                    <input id = "noteSlider" type="range" value="1" min="1" max="5" oninput="refreshNote()" onchange="refreshNote()"> 
+                    <output>5</output>
                 </div>
                 <div class="dangerZone">
                     <form class="dangerZoneForm">
