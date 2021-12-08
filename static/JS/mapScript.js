@@ -26,7 +26,7 @@ const svg = d3.select(container)
     .append("svg")
         .attr("id", "points_container");   // The id of the svg is points_container
 
-d3.json("sharks.json", function(data){   // The code in the function is executed only when the data is loaded. All code requiring that the data is fully loaded shoud come here
+d3.json("sharksModified.json", function(data){   // The code in the function is executed only when the data is loaded. All code requiring that the data is fully loaded shoud come here
 
 
 
