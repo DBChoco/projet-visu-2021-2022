@@ -11,14 +11,15 @@
     <script src="static/JS/javaScript.js"></script> 
     <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- d3.js import -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>   <!-- Mapbox library import -->
+    <script src="/static/JS/split.js"></script>
     <!--Import of the different css-->
-    <link rel="stylesheet" href="static/CSS/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="/jquery/jquery-ui.css">
     <link rel="stylesheet"  type="text/css" href="static/CSS/styleSheet.css">
     <link rel="stylesheet" type="text/css" href="static/CSS/filterStyleSheet.css">
     <link rel="stylesheet" type="text/css" href="static/CSS/dropMenuSSheet.css">
     <link rel="stylesheet" href="static/CSS/mapStyleSheet.css">
     <link rel="stylesheet" href="static/CSS/slider.css">
-    <link rel="stylesheet" href="static/CSS/resto.css">
+    <link rel="stylesheet" href="static/CSS/restoList.css">
     <!--Import of the icon-->
     <link rel="icon" type="image/x-icon" href="/images/SharkEatsIcon.png">
   </head> 
@@ -28,7 +29,7 @@
         <img src = "images/SharkEatsLogo.png" alt = "logo" class = "logo">
     </header>
 
-    <!--Setting up the menu-->
+    <!--Setting up the top menu-->
     <nav>
         <section class="menu">
             <div class="navbar">
@@ -127,10 +128,10 @@
                                 } 
                             </script>
                         </div>
-
                     
                         <a id="#"><h3>Corps part</h3></a>
                         <!--TODO - menu des 1 parties au dessus-->
+
                     </form>
                 </div>
                 <div class="note">
@@ -148,13 +149,15 @@
                 </div>
     </aside>
 
-    <!--Setting up the list-->
+    <!--Main section of the website-->
     <div class="container">
         <div class="container__top" id = "container__top">
-            <script src="static/JS/resto.js"></script>
+            <!--Setting up the list-->
+            <script src="static/JS/restoList.js"></script>
         </div>
         <div class="resizer" data-direction="vertical"></div>
         <div class="container__bottom">
+            <!--Setting up the map-->
             <div id="map"></div>
         </div>
     </div>

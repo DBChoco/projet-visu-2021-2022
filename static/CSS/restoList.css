@@ -7,12 +7,13 @@
     margin-right: 5px;
     text-align:center;
     float: left;
+    cursor: pointer;
   }
   
   .restoPhoto{
-    height: 70%;
-    padding-top: 15%;
-    padding-left: 15%;
+    height: 90%;
+    padding-top: 5%;
+    padding-left: 5%;
   }
   
   .restoPhotoDiv{
@@ -22,21 +23,21 @@
   }
   
   .restoTextDiv{
-    width: 20%;
+    width: 50vw;
     float: left;
-    padding-left: 40px;
-    padding-top: 30px;
+    padding-left: 30px;
+    padding-top: 20px;
     flex-direction: column;
   }
   
-  .restoTitle, .restoDescription{
+  .restoTitle, .restoDescription, .bottomText{
     color: black;
     text-align: left;
     margin: 0;
   }
   
   .restoTitle{
-    font-size: 24px;
+    font-size: 27px;
   }
   
   .starsDiv{
@@ -44,5 +45,12 @@
     font-size: 30px;
     margin-top: 20px;
     margin-right: 20px;
-    text-shadow: 0 0 3px #000000, 0 0 5px #0000FF;
+  }
+
+  .restoBottomTextDiv{
+    padding-top: 80px;
+    font-size: 24px;
+    text-align: left;
+    height: max-content;
+    overflow: visible;
   }
