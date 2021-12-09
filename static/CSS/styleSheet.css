@@ -36,8 +36,6 @@ footer{
     height: 0px;
 }
 
-
-
 .container {
   display: flex;
   flex-direction: column;
@@ -52,7 +50,7 @@ footer{
   align-items: center;
   flex-direction: column;
   background-color: #333;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   overflow-y: auto;
 }
 .resizer {
