@@ -8,6 +8,8 @@ function createResto(container){
             addRestoTitle(newDiv, data[i]["RestoName"], "The best restaurant ever, probably.", data[i]["Price"], data[i]["Country"], data[i]["Area"], data[i]["Location"], data[i]["Dangerous"] )
             addRestoStars(newDiv, data[i]["Stars"])
 
+            
+            newDiv.setAttribute("data-name", data[i]["RestoName"])
             newDiv.setAttribute("data-fish", data[i]["Fish"])
             newDiv.setAttribute("data-human", data[i]["Human"])
             newDiv.setAttribute("data-note", data[i]["Stars"])

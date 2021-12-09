@@ -1,3 +1,10 @@
+var allResto = document.getElementsByClassName("resto")
+var colorSelected = "#1c8639" 
+var colorReselected = "#16672c"
+var colorUnselected = "#f9f9f9"
+
+
+
 function refresh(){
     var allResto = document.getElementsByClassName("resto")
     for (i=0; i<allResto.length; i++){
@@ -8,7 +15,7 @@ function refresh(){
             allResto[i].style.display = "none"
         }
     }
-    colorCorrect(allResto)
+    colorCorrect()
 }
 
 function filterValue(restoDiv){
@@ -29,7 +36,7 @@ function filterValue(restoDiv){
     }
 }
 
-function colorCorrect(allResto){
+function colorCorrect(){
     var visibleRestos = [];
     for (let i = 0; i < allResto.length; i++){
         if (allResto[i].style.display == "block"){
@@ -42,4 +49,99 @@ function colorCorrect(allResto){
             }
         }
     }
+}
+
+function sortByStars(){
+    var button = document.getElementById("stars-sort")
+    document.getElementById("price-sort").style.backgroundColor = colorUnselected
+    console.log(button.style.backgroundColor)
+    if (button.style.backgroundColor == "rgb(28, 134, 57)"){
+        sortByStarsDescending()
+    }
+    else{
+        sortByStarsAscending()
+    }
+    refresh()
+}
+
+function sortByPrice(){
+    var button = document.getElementById("price-sort")
+    document.getElementById("stars-sort").style.backgroundColor = colorUnselected
+
+    console.log(button.style.backgroundColor)
+    if (button.style.backgroundColor == "rgb(28, 134, 57)"){
+        sortByPriceDescending()
+    }
+    else{
+        sortByPriceAscending()
+    }
+    refresh()
+}
+
+function sortByStarsAscending(){
+    var toSort = Array.prototype.slice.call(allResto, 0);
+    toSort.sort(function(a, b) {
+        return a.getAttribute("data-note") - b.getAttribute("data-note")
+    });
+
+    var parent = document.getElementById("container__top")
+    parent.innerHTML = "";
+
+    for(var i = 0, l = toSort.length; i < l; i++) {
+        parent.appendChild(toSort[i]);
+    }
+
+    var button = document.getElementById("stars-sort")
+    button.style.backgroundColor = colorSelected
+}
+
+function sortByStarsDescending(){
+    var toSort = Array.prototype.slice.call(allResto, 0);
+    toSort.sort(function(a, b) {
+        return b.getAttribute("data-note") - a.getAttribute("data-note")
+    });
+
+    var parent = document.getElementById("container__top")
+    parent.innerHTML = "";
+
+    for(var i = 0, l = toSort.length; i < l; i++) {
+        parent.appendChild(toSort[i]);
+    }
+
+    var button = document.getElementById("stars-sort")
+    button.style.backgroundColor = colorReselected
+}
+
+function sortByPriceAscending(){
+    var toSort = Array.prototype.slice.call(allResto, 0);
+    toSort.sort(function(a, b) {
+        return a.getAttribute("data-price") - b.getAttribute("data-price")
+    });
+
+    var parent = document.getElementById("container__top")
+    parent.innerHTML = "";
+
+    for(var i = 0, l = toSort.length; i < l; i++) {
+        parent.appendChild(toSort[i]);
+    }
+
+    var button = document.getElementById("price-sort")
+    button.style.backgroundColor = colorSelected
+}
+
+function sortByPriceDescending(){
+    var toSort = Array.prototype.slice.call(allResto, 0);
+    toSort.sort(function(a, b) {
+        return b.getAttribute("data-price") - a.getAttribute("data-price")
+    });
+
+    var parent = document.getElementById("container__top")
+    parent.innerHTML = "";
+
+    for(var i = 0, l = toSort.length; i < l; i++) {
+        parent.appendChild(toSort[i]);
+    }
+
+    var button = document.getElementById("price-sort")
+    button.style.backgroundColor = colorReselected
 }
