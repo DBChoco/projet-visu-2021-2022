@@ -17,9 +17,6 @@ function filterValue(restoDiv){
     var priceDivs = document.getElementsByClassName("price-check")
     var dangerValue = document.getElementById("dangerZoneCheck").checked
 
-    console.log(restoDiv.getAttribute("data-danger"))
-
-
     if (noteValue <= restoDiv.getAttribute("data-note") && 
     ((fishValue && restoDiv.getAttribute("data-fish") == "true") || 
     (!fishValue && restoDiv.getAttribute("data-fish") == "false")) && 
