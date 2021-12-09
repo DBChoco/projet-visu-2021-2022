@@ -8,6 +8,7 @@ function refresh(){
             allResto[i].style.display = "none"
         }
     }
+    colorCorrect(allResto)
 }
 
 function filterValue(restoDiv){
@@ -28,5 +29,20 @@ function filterValue(restoDiv){
     }
     else{
         return false;
+    }
+}
+
+function colorCorrect(allResto){
+    var visibleRestos = [];
+    for (let i = 0; i < allResto.length; i++){
+        if (allResto[i].style.display == "block"){
+            visibleRestos.push(allResto[i])
+            if (visibleRestos.length % 2 == 0){
+                allResto[i].style.backgroundColor = "#1c8643"
+            }
+            else{
+                allResto[i].style.backgroundColor = "#49da89"
+            }
+        }
     }
 }
