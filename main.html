@@ -6,15 +6,11 @@
 </head>
 <head>
     <!--Import of the different scripts-->
-    <script src="jquery/jquery-3.6.0.min.js"></script>
-    <script src="jquery/jquery-ui.js"></script>
-    <script src="static/JS/javaScript.js"></script> 
     <script src="https://d3js.org/d3.v3.min.js"></script>   <!-- d3.js import -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>   <!-- Mapbox library import -->
     <script src="static/JS/split.js"></script>
     <script src="static/JS/refresh.js"></script>
     <!--Import of the different css-->
-    <link rel="stylesheet" href="jquery/jquery-ui.css">
     <link rel="stylesheet"  type="text/css" href="static/CSS/styleSheet.css">
     <link rel="stylesheet" type="text/css" href="static/CSS/filterStyleSheet.css">
     <link rel="stylesheet" type="text/css" href="static/CSS/dropMenuSSheet.css">
@@ -51,7 +47,7 @@
 
     <!--Setting up the filter-->
     <aside> 
-        <div class="filter">
+        <div class="filter" id="filter">
             <div class="location">
                 <h2>Location</h2>
                 <input type="text" id="locations" value="locations">
@@ -60,9 +56,41 @@
                 <input type="number" id="distance" value="0" min="0" max="20000">
             </div>
                 <h2>Filtre</h2>
-                <div class="price">
+                <div class="price-general">
                     <h3>Price</h3>
-                        <div id="price-range"></div>
+                        <button type="button" class="collapsible">Choose price</button>
+                        <div class="content">
+                            <div class = "price-filter">
+                                <label>
+                                    💵 &nbsp;&nbsp;
+                                    <input type="checkbox" class = "price-check" id="1dollar" checked class = "larger" onclick="refreshPrice()">
+                                </label>
+                            </div>
+                            
+                            <div class = "price-filter">
+                                <label>
+                                    💵&nbsp;💵 &nbsp;&nbsp;
+                                    <input type="checkbox" class = "price-check" id="2dollar" checked class = "larger" onclick="refreshPrice()">
+                                </label>
+                            </div>
+
+                            <div class = "price-filter">
+                                <label>
+                                    💵&nbsp;💵&nbsp;💵 &nbsp;&nbsp;
+                                    <input type="checkbox" class = "price-check"  id="3dollar" checked class = "larger" onclick="refreshPrice()">
+                                </label>
+                            </div>
+
+                            <div class = "price-filter">
+                                <label>
+                                    💵&nbsp;💵&nbsp;💵&nbsp;💵 &nbsp;&nbsp;
+                                    <input type="checkbox" class = "price-check"  id="4dollar" checked class = "larger" onclick="refreshPrice()">
+                                </label>
+                            </div>
+                            
+
+                        </div> 
+                    </div>
                 </div>
                 <div class="meal">
                     <form class="mealForm">
@@ -146,7 +174,7 @@
                     <form class="dangerZoneForm">
                         <h3>Dangerous Zones</h3>
                         <label class="switch">
-                            <input type="checkbox" id="dangerZone">
+                            <input type="checkbox" id="dangerZone" onclick="refreshDanger()">
                             <span class="slider"></span>
                         </label>
                     </form>

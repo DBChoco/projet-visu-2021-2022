@@ -11,9 +11,32 @@ function refreshFish(){
     }
 }
 
+function refreshPrice(){
+    var allResto = document.getElementsByClassName("resto")
+    for (i=0; i<allResto.length; i++){
+        if (filterValue(allResto[i])){
+            allResto[i].style.display = "block"
+        }
+        else{
+            allResto[i].style.display = "none"
+        }
+    }
+}
+
+function refreshDanger(){
+    var allResto = document.getElementsByClassName("resto")
+    for (i=0; i<allResto.length; i++){
+        if (filterValue(allResto[i])){
+            allResto[i].style.display = "block"
+        }
+        else{
+            allResto[i].style.display = "none"
+        }
+    }
+}
+
 function refreshHuman(){
     var allResto = document.getElementsByClassName("resto")
-    var fishValue = document.getElementById("human").checked
     for (i=0; i<allResto.length; i++){
         if (filterValue(allResto[i])){
             allResto[i].style.display = "block"
@@ -40,9 +63,12 @@ function refreshNote(){
 function filterValue(restoDiv){
     var noteValue = document.getElementById("noteSlider").value
     var fishValue = document.getElementById("fish").checked
+    var priceDivs = document.getElementsByClassName("price-check")
+    console.log(restoDiv.getAttribute("data-price"))
+    console.log(priceDivs[restoDiv.getAttribute("data-price")-1].checked)
     if (noteValue <= restoDiv.getAttribute("data-note") && 
     ((fishValue && restoDiv.getAttribute("data-fish") == "true") || 
-    (!fishValue && restoDiv.getAttribute("data-fish") == "false"))){
+    (!fishValue && restoDiv.getAttribute("data-fish") == "false")) && priceDivs[restoDiv.getAttribute("data-price")-1].checked){
         return true;
     }
     else{
