@@ -11,7 +11,7 @@ function createResto(container){
             newDiv.setAttribute("data-fish", data[i]["Fish"])
             newDiv.setAttribute("data-human", data[i]["Human"])
             newDiv.setAttribute("data-note", data[i]["Stars"])
-            newDiv.setAttribute("data-danger", data[i]["Danger"])
+            newDiv.setAttribute("data-danger", data[i]["Dangerous"])
             newDiv.setAttribute("data-price", data[i]["Price"])
             
             container.append(newDiv)
@@ -28,6 +28,7 @@ var listContainer = document.getElementById('container__top');
 makeClick(listContainer)
 
 createResto(listContainer)
+
 
 function makeClick(listContainer){
     listContainer.onclick = function () {
