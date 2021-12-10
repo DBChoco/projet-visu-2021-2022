@@ -159,7 +159,6 @@
                     <div class="slideshow-container" id ="SlideshowTop">
                         <!-- Slideshow images with number and caption text -->
                         <div class="w3-display-container mySlides fade">
-                            <!--div class="numbertext">1 / 4</div -->
                             <img src="images/1.jpg" style="width:100%">
                             <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
                                 <p> Black chocolate is the best </p>
@@ -167,7 +166,6 @@
                         </div>
 
                         <div class="w3-display-container mySlides fade">
-                            <!--div class="numbertext">2 / 4</div-->
                             <img src="images/2.jpg" style="width:100%">
                             <div class="w3-display-bottomleft w3-opacity w3-container w3-green">
                                 <p> </p>
@@ -175,7 +173,6 @@
                         </div>
 
                         <div class="w3-display-container mySlides fade">
-                            <!--div class="numbertext">3 / 4</div-->
                             <img src="images/3.jpg" style="width:100%">
                             <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
                                 <p> Black chocolate is the best </p>
@@ -183,7 +180,6 @@
                         </div>
 
                         <div class="w3-display-container mySlides fade">
-                            <!--div class="numbertext">4 / 4</div-->
                             <img src="images/4.jpg" style="width:100%">
                             <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
                                 <p> Black chocolate is the best</p>
@@ -207,11 +203,6 @@
                         </div>
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        <!-- <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
-            </div>-->
                     </div>
                 </div>
 
@@ -258,17 +249,10 @@
                 <div id="Description">
                     <hr>
                     <h2><strong>Description</strong></h2>
-                    <h4><p>Rose Island is a small piece of land (11 miles in length) just northeast of 
+                    <h4><p id="restaurantDescription">Rose Island is a small piece of land (11 miles in length) just northeast of 
                     Nassau and has a thin peninsula which juts out seven miles east. The island has no roads. <br>
                     Centuries ago the island was home to a pineapple plantation, then from 1969 to 2005, it was 
                     owned by Claude Turner.</h4></p>
-                    <!-- <h4><strong>Narrative</strong></h4>  
-          <p>Jordan Lindsey and her family were snorkeling with the island's Sandy Toes
-            excursion company. Jordan had been in the water for about 45 minutes when her family
-            spotted the sharks and yelled out to Jordan, but she didn't hear them in time. Kami Lindsey,
-            Jordan’s mother, was also in the water at the time but the attack happened too quickly for
-            her to provide any real help. She did her best to pull her daughter’s injured body to the
-            shore, but she’d already lost too much blood, her father Michael Lindsey said.</p> -->
                 </div>
                 
                 <!-- writing a review Section Pop Up-->
@@ -367,7 +351,6 @@
 
                 <!-- Read the reviews I will use the narrative as comments-->
                 <div id="ReadAReview">
-                    <!-- h2><strong>Reviews</strong></h2-->
                     <span class="heading">User Rating</span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -443,10 +426,10 @@
                 <!-- Localisation du resto-->
                 <div id="Localisation">
                     <h2 class="w3-center">Localisation</h2><br>
-                    <h4 class="w3-center">BAHAMAS</h4>
-                    <h4 class="w3-center">Lucayan Archipelago</h4>
-                    <h6 class="w3-center">Latitude: 25.085249</h6>
-                    <h6 class="w3-center">Longitude: -77.208738</h6><br>
+                    <h4 class="w3-center" id="country">BAHAMAS</h4>
+                    <h4 class="w3-center" id="area">Lucayan Archipelago</h4>
+                    <h6 class="w3-center" id="lat">Latitude: 25.085249</h6>
+                    <h6 class="w3-center" id="long">Longitude: -77.208738</h6><br>
                 </div>     
                 <!-- Themes  et hyper lien-->
                 <div id="Theme">
