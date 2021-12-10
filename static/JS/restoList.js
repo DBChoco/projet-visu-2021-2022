@@ -21,19 +21,20 @@ function createResto(container){
             if (i % 2 == 1){
                 newDiv.style.backgroundColor = "#1c8643"
             }
+
+            makeClick(newDiv)
         }
     });
 }
 
 var listContainer = document.getElementById('container__top');
 
-makeClick(listContainer)
 
 createResto(listContainer)
 
 
-function makeClick(listContainer){
-    listContainer.onclick = function () {
+function makeClick(resto){
+    resto.onclick = function () {
         location.href = "resto.html";
     };
 }
