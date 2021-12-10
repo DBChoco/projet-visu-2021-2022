@@ -10,6 +10,7 @@
   <!--Import of the different scripts-->
   <script src='static/JS/split.js'> </script>
   <script src="static/JS/javaScript.js"></script>
+  <script src="W3S/restopage.js"></script>
   <script src="jquery/jquery-ui.js"></script>
   <script src="jquery/jquery-3.6.0.min.js"></script>
   <script src="https://d3js.org/d3.v3.min.js"></script> <!-- d3.js import -->
@@ -21,6 +22,7 @@
   <link rel="stylesheet" href="jquery/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="W3S/w3.css">
   <link rel="stylesheet" type="text/css" href="W3S/style2.css">
+  <link rel="stylesheet" type="text/css" href="W3S/restopage.css">
   <link rel="stylesheet" type="text/css" href="static/CSS/styleSheet.css">
   <link rel="stylesheet" type="text/css" href="W3S/restopage.css">
   <link rel="stylesheet" type="text/css" href="static/CSS/dropMenuSSheet.css">
@@ -30,232 +32,456 @@
   <link rel="icon" type="image/x-icon" href="/images/SharkEatsIcon.png">
 </head>
 
-<!--additional style for the resto page-->
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-
-
-* {box-sizing: border-box}
-body {font-family: "Raleway", sans-serif; margin:0}
-.mySlides {display: none}
-img {vertical-align: middle;}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-</style>
-
-<header>
-  <!--Header: superior part of the website-->
-  <img src="images/SharkEatsLogo.png" alt="logo" class="logo">
-</header>
-
 <body>
-  <!--Setting up the menu-->
-  <nav>
-    <section class="menu">
-      <div class="navbar">
-        <a href="javascript:void(0)" class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</a>
-        <a href="main.html">Home</a>
-        <div class="dropdown">
-          <button class="dropbtn">Dropdown
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a id="note">Note</a>
-            <a id="price">Prix</a>
+    <header> <!--Header: superior part of the website-->
+        <img src="images/SharkEatsLogo.png" alt="logo" class="logo">
+    </header>
+
+    <!--Setting up the top menu-->
+    <nav>
+      <section class="menu">
+        <div class="navbar" id="openNav">
+          <a href="javascript:void(0)" class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</a>
+          <a href="main.html">Home</a>
+          <div class="dropdown">
+            <button class="dropbtn">Dropdown
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a id="note">Note</a>
+              <a id="price">Prix</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </nav>
-  
+      </section>
+    </nav>
 
-  <!--Setting up the filter-->
-  <aside class="w3-bar-block w3-animate-left w3-collapse  w3-center" style="display:none;z-index:3" id="mySidebar">
-    <div class="filter w3-display-container w3-center w3-padding-16">
-      <i onclick="w3_close()" class="fa fa-remove w3-button w3-transparent w3-display-topright"></i>     
-      <div class="location">
-        <h2>Location</h2>
-        <input type="text" id="locations" value="locations">
-        </br> 
-        </br>
-        <input type="number" id="distance" value="0" min="0" max="20000">
-      </div>
-      <h2>Filtre</h2>
-      <div class="price">
-        <h3>Price</h3>
-        <div id="price-range"></div>
-      </div>
-      <div class="meal">
-        <form class="mealForm">
-          <div class="fish">
-            <h3>Fish</h3>
-                <label class="switch">
-                  <input type="checkbox" id="human" checked id="poisson" >
-                  <span class="slider"></span>
-                </label>
-          </div>
-          <div class="human">
-            <h3>Humans</h3>
-              <label class="switch">
-                <input type="checkbox" id="human" checked>
-                <span class="slider"></span>
-              </label>
-          </div>
-          <div class = "nationality-filter">
-            <h3>Nationality</h3>
-            <button type="button" class="collapsible">Choose nationality</button>
-            <div class="content">
-              <div class = "nationality">
-                <label>
-                  African: &nbsp;&nbsp;
-                  <input type="checkbox" id="african" checked class = "larger">
-                </label>
-              </div>
-              <div class = "nationality">
-                <label>
-                  Asian: &nbsp;&nbsp;
-                  <input type="checkbox" id="african" checked class = "larger">
-                </label>
-              </div>
-              <div class = "nationality">
-                <label>
-                  Ben Max & Sim: &nbsp;&nbsp;
-                  <input type="checkbox" id="african" class = "larger">
-                </label>
-              </div>
-              <div class = "nationality">
-                <label>
-                  Chocolat: &nbsp;&nbsp;
-                  <input type="checkbox" id="african" checked class = "larger">
-                </label>
-              </div>
+    <!--Setting up the filter-->
+    <aside class="w3-bar-block w3-animate-left w3-collapse" style="display:none;z-index:3" id="mySidebar">
+        <div class="filter w3-display-container w3-padding-16">
+        <i onclick="w3_close()" class="fa fa-remove w3-button w3-transparent w3-display-topright"></i>    
+            <div class="location">
+                <h2>Location</h2>
+                <input type="text" id="locations" value="locations">
+                    </br> 
+                    </br>
+                <input type="number" id="distance" value="0" min="0" max="20000">
             </div>
-            <!--Script to hide the filter-->
-            <script src='static/JS/hide.js'></script>
-          </div>
-          <a id="#"><h3>Corps part</h3></a>
-          <!--TODO menu des 1 parties au dessus-->
-        </form>
-      </div>
-      <div class="note">
-        <h3>Note</h3>
-        <div id = "note-slider">
-      </div>
-      <div class="dangerZone">
-        <form class="dangerZoneForm">
-          <h3>Dangerous Zones</h3>
-            <label class="switch">
-              <input type="checkbox" id="dangerZone">
-              <span class="slider"></span>
-            </label>
-        </form>
-      </div>
-  </aside>
-  <section id=#mainArea>
-    <!--Page division into 2/3 and 1/3-->
-    <div class="w3-main">
-      <div class="w3-white w3-container w3-twothird">
-        <!-- Slideshow container & Comment half of the page-->
-        <div class="w3-threequarter w3-padding-large w3-hide-small">
-          <h2 class="w3-left">Jordan Lindsey's restaurant</h2><br>  <!-- titre du resto-->
-          <div class="slideshow-container">
-            <!-- Slideshow images with number and caption text -->
-            <div class="w3-display-container mySlides fade">
-              <img src="images/1.jpg" style="width:100%">
-              <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
-                <p> This is Patrick the star </p>
-              </div>
+                <h2>Filtre</h2>
+                <div class="price">
+                    <h3>Price</h3>
+                <div id="price-range"></div>
             </div>
-            <div class="w3-display-container mySlides fade">
-              <img src="images/2.jpg" style="width:100%">
-              <div class="w3-display-bottomleft w3-opacity w3-container w3-green">
-                <p> Krusty Krab is the best restaurant in the whole Bikini Bottom </p>
-              </div>
+            <div class="meal">
+                <form class="mealForm">
+                    <div class="fish">
+                        <h3>Fish</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="human" checked id="poisson" >
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="human">
+                        <h3>Humans</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="human" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class = "nationality-filter">
+                        <h3>Nationality</h3>
+                        <button type="button" class="collapsible">Choose nationality</button>
+                        <div class="content">
+                            <div class = "nationality">
+                                <label>
+                                    African: &nbsp;&nbsp;
+                                    <input type="checkbox" id="african" checked class = "larger">
+                                </label>
+                            </div>
+                     
+                            <div class = "nationality">
+                                <label>
+                                    Asian: &nbsp;&nbsp;
+                                   <input type="checkbox" id="african" checked class = "larger">
+                                </label>
+                            </div>
+
+                            <div class = "nationality">
+                                <label>
+                                    Ben Max & Sim: &nbsp;&nbsp;
+                                    <input type="checkbox" id="african" class = "larger">
+                                </label>
+                            </div>
+
+                            <div class = "nationality">
+                                <label>
+                                    Chocolat: &nbsp;&nbsp;
+                                    <input type="checkbox" id="african" checked class = "larger">
+                                </label>
+                            </div>
+                     
+                        </div> 
+                        <script>
+                            var coll = document.getElementsByClassName("collapsible");
+                            var i;
+
+                            for (i = 0; i < coll.length; i++) {
+                            coll[i].addEventListener("click", function() {
+                              this.classList.toggle("active");
+                              var content = this.nextElementSibling;
+                              if (content.style.display === "block") {
+                              content.style.display = "none";
+                              } else {
+                              content.style.display = "block";
+                              }
+                            });
+                            } 
+                        </script> 
+                    </div>
+
+                    <a id="#"><h3>Corps part</h3></a>
+                    <!--TODO menu des 1 parties au dessus-->
+                </form>
             </div>
-            <div class="w3-display-container mySlides fade">
-              <img src="images/3.jpg" style="width:100%">
-              <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
-                <p> You're aweasome, am I too ? </p>
-              </div>
+            <div class="note">
+                <input id = "noteSlider" type="range" value="1" min="1" max="5" oninput="refreshNote()" onchange="refreshNote()"> 
+                <output>5</output>
             </div>
-            <div class="w3-display-container mySlides fade">
-              <img src="images/4.jpg" style="width:100%">
-              <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
-                <p> This place has chocolate, therefore it's the best place ever </p>
-              </div>
+            <div class="dangerZone">
+                <form class="dangerZoneForm">
+                    <h3>Dangerous Zones</h3>
+                    <label class="switch">
+                        <input type="checkbox" id="dangerZone">
+                        <span class="slider"></span>
+                    </label>
+                </form>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <br>
-            <div style="text-align:center">
+    </aside>
+
+    <!--Main section of the page resto.html-->
+    <section>
+
+        <!-- Division de la page en 2/3 et 1/3-->
+        <div class="w3-main">
+          <!-- Slideshow container, Review, Descriptions and Comment twothird of the page-->
+          <div class = "navigation">
+            <div class="w3-white w3-container w3-twothird" id ="MainSection">
+                <!-- Slideshow container & Comment half of the page-->
+                <div class="w3-threequarter w3-padding-large w3-hide-small" id ="MainSectionTopLeft">
+                 
+                    <h1 class="w3-left" id = "Title">Jordan Lindsey's restaurant</h1><br>  <!-- titre du resto-->
+                    <div class="slideshow-container" id ="SlideshowTop">
+                        <!-- Slideshow images with number and caption text -->
+                        <div class="w3-display-container mySlides fade">
+                            <!--div class="numbertext">1 / 4</div -->
+                            <img src="images/1.jpg" style="width:100%">
+                            <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
+                                <p> Ta mère elle a pas Netflix. </p>
+                            </div>
+                        </div>
+
+                        <div class="w3-display-container mySlides fade">
+                            <!--div class="numbertext">2 / 4</div-->
+                            <img src="images/2.jpg" style="width:100%">
+                            <div class="w3-display-bottomleft w3-opacity w3-container w3-green">
+                                <p> Gobe-moi les ovaires et étouffe-toi avec </p>
+                            </div>
+                        </div>
+
+                        <div class="w3-display-container mySlides fade">
+                            <!--div class="numbertext">3 / 4</div-->
+                            <img src="images/3.jpg" style="width:100%">
+                            <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
+                                <p> T’es con comme du plastique </p>
+                            </div>
+                        </div>
+
+                        <div class="w3-display-container mySlides fade">
+                            <!--div class="numbertext">4 / 4</div-->
+                            <img src="images/4.jpg" style="width:100%">
+                            <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
+                                <p> T’es comme une pizza, sauf qu’elle on peut l’avoir sans champignons </p>
+                            </div>
+                        </div>
+
+                        <!-- Slideshow en bas -->
+                        <div class="w3-row-padding w3-section" id ="SlideshowTop">
+                            <div class="w3-col s3">
+                                <img class="demo w3-opacity w3-hover-opacity-off" src="images/1.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)" title="Living room">
+                            </div>
+                            <div class="w3-col s3">
+                                <img class="demo w3-opacity w3-hover-opacity-off" src="images/2.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)" title="Dining room">
+                            </div>
+                            <div class="w3-col s3">
+                                <img class="demo w3-opacity w3-hover-opacity-off" src="images/3.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)" title="Bedroom">
+                            </div>
+                            <div class="w3-col s3">
+                                <img class="demo w3-opacity w3-hover-opacity-off" src="images/4.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)" title="Second Living Room">
+                            </div>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        <!-- <div style="text-align:center">
               <span class="dot" onclick="currentSlide(1)"></span>
               <span class="dot" onclick="currentSlide(2)"></span>
               <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-          </div>
-        </div>
-        <br><br><br><br>
-        <!-- TODO - Comment & Stars review half of the page  BESOIN D'AIDE pour baisser le etoiles-->
-        <!-- lien etoile:  https://bbbootstrap.com/snippets/bootstrap-5-products-star-ratings-details-73963678 -->
-        <div class="w3-quarter w3-white w3-container d-flex justify-content-center align-items-center">
-          <div class="card p-3">
-            <div class=" d-flex justify-content-between align-items-center">
-                <div class="ratings"> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star"></i> </div>
-                <h1 class="review-count">12 Reviews</h1>
-            </div>
-            <div class="mt-5 d-flex justify-content-between align-items-center">
-                <h5 class="review-stat">Ambiance</h5>
-                <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-            </div>
-            <div class="mt-1 d-flex justify-content-between align-items-center">
-                <h5 class="review-stat">Prix</h5>
+            </div>-->
+                    </div>
+                </div>
+
+                <br><br><br><br>   
+
+                <!-- lien etoile:  https://bbbootstrap.com/snippets/bootstrap-5-products-star-ratings-details-73963678 -->
+                <div class="w3-quarter w3-container w3-padding-64 d-flex justify-content-center align-items-center"  id ="MainSectionTopRight">
+                    <div class="card p-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="ratings"> 
+                            <i class="fa fa-star rating-color"></i> 
+                            <i class="fa fa-star rating-color"></i> 
+                            <i class="fa fa-star rating-color"></i> 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i> 
+                        </div>
+                            <h1 class="review-count">12 Reviews</h1>
+                    </div>
+                    <div class="mt-5 d-flex justify-content-between align-items-center">
+                        <h3 class="review-stat">Qualité</h3>
+                        <div class="small-ratings"> 
+                            <i class="fa fa-star rating-color"></i> 
+                            <i class="fa fa-star rating-color"></i> 
+                            <i class="fa fa-star rating-color"></i> 
+                            <i class="fa fa-star"></i> 
+                            <i class="fa fa-star"></i> 
+                        </div>
+                    </div>
+                    <div class="mt-1 d-flex justify-content-between align-items-center">
+                <h3 class="review-stat">Prix</h3>
                 <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star"></i> </div>
-            </div>
-            <div class="mt-1 d-flex justify-content-between align-items-center">
-                <h5 class="review-stat">Qualité</h5>
+                    </div>
+                    <div class="mt-1 d-flex justify-content-between align-items-center">
+                <h3 class="review-stat">Ambiance</h3>
                 <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                    </div>
+                    </div>
+                </div>
+            </div>  
+
+            <!-- Bas de la page-->
+            <div class="w3-white w3-container w3-twothird w3-padding-large w3-hide-small" id ="MainSectionDown">
+                <!-- Description of the Area-->
+                <div id="Description">
+                    <hr>
+                    <h2><strong>Description</strong></h2>
+                    <h4><p>Rose Island is a small piece of land (11 miles in length) just northeast of 
+                    Nassau and has a thin peninsula which juts out seven miles east. The island has no roads. <br>
+                    Centuries ago the island was home to a pineapple plantation, then from 1969 to 2005, it was 
+                    owned by Claude Turner.</h4></p>
+                    <!-- <h4><strong>Narrative</strong></h4>  
+          <p>Jordan Lindsey and her family were snorkeling with the island's Sandy Toes
+            excursion company. Jordan had been in the water for about 45 minutes when her family
+            spotted the sharks and yelled out to Jordan, but she didn't hear them in time. Kami Lindsey,
+            Jordan’s mother, was also in the water at the time but the attack happened too quickly for
+            her to provide any real help. She did her best to pull her daughter’s injured body to the
+            shore, but she’d already lost too much blood, her father Michael Lindsey said.</p> -->
+                </div>
+                
+                <!-- writing a review Section Pop Up-->
+                <div id="GiveAReview" class="w3-xlarge w3-padding-32 w3-center" >
+                    <button onclick="document.getElementById('review').style.display='block'" class="w3-button w3-center w3-green w3-opacity w3-hover-opacity-off" style="padding:15px 75px">Reviews</button>
+                    <br>
+                    <div id="review" class="w3-modal">
+                        <div class="w3-modal-content w3-card-1 w3-animate-zoom" style="padding:32px;max-width:3000px">
+                            <div class="w3-container w3-center">
+                                <span onclick="document.getElementById('review').style.display='none'" class="w3-button w3-display-topright w3-green w3-large">X</span>  
+                                <h2 class="w3-wide">Reviews</h2>
+                                    <img src="images/popup.jpg" alt="Avatar" style="width:75%;">
+                                    <form action="/action_page.php">
+                                        <!-- lien etoile:  https://bbbootstrap.com/snippets/animated-rating-stars-18298447 -->                
+                                        <!-- Qualité -->
+                                        <div class="w3-container w3-center d-flex justify-content-center">
+                                            <div class="row"> 
+                                                <h2><strong> Qualité </strong></h2>
+                                                <div class="col-md-12">  
+                                                    <div class="stars">
+                                                        <form action=""> 
+                                                            <input class="star star-5" id="star-5" type="radio" name="star" /> 
+                                                            <label class="star star-5" for="star-5"></label> 
+                                                            <input class="star star-4" id="star-4" type="radio" name="star" /> 
+                                                            <label class="star star-4" for="star-4"></label> 
+                                                            <input class="star star-3" id="star-3" type="radio" name="star" /> 
+                                                            <label class="star star-3" for="star-3"></label> 
+                                                            <input class="star star-2" id="star-2" type="radio" name="star" /> 
+                                                            <label class="star star-2" for="star-2"></label> 
+                                                            <input class="star star-1" id="star-1" type="radio" name="star" /> 
+                                                            <label class="star star-1" for="star-1"></label> 
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <!-- Prix -->
+                                        <div class="w3-container w3-center d-flex justify-content-center">
+                                          <div class="row"> 
+                                              <h2><strong> Prix </strong></h2>
+                                              <div class="col-md-12">  
+                                                  <div class="stars">
+                                                      <form action=""> 
+                                                          <input class="starp starp-5" id="starp-5" type="radio" name="star" /> 
+                                                          <label class="starp starp-5" for="starp-5"></label> 
+                                                          <input class="starp starp-4" id="starp-4" type="radio" name="star" /> 
+                                                          <label class="starp starp-4" for="starp-4"></label> 
+                                                          <input class="starp starp-3" id="starp-3" type="radio" name="star" /> 
+                                                          <label class="starp starp-3" for="starp-3"></label> 
+                                                          <input class="starp starp-2" id="starp-2" type="radio" name="star" /> 
+                                                          <label class="starp starp-2" for="starp-2"></label> 
+                                                          <input class="starp starp-1" id="starp-1" type="radio" name="star" /> 
+                                                          <label class="starp starp-1" for="starp-1"></label> 
+                                                      </form>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>                                             
+                                        <!-- Ambiance -->
+                                        <div class="w3-container w3-center d-flex justify-content-center">
+                                          <div class="row"> 
+                                              <h2><strong> Ambiance </strong></h2>
+                                              <div class="col-md-12">  
+                                                  <div class="stars">
+                                                      <form action=""> 
+                                                          <input class="stara stara-5" id="stara-5" type="radio" name="star" /> 
+                                                          <label class="stara stara-5" for="stara-5"></label> 
+                                                          <input class="stara stara-4" id="stara-4" type="radio" name="star" /> 
+                                                          <label class="stara stara-4" for="stara-4"></label> 
+                                                          <input class="stara stara-3" id="stara-3" type="radio" name="star" /> 
+                                                          <label class="stara stara-3" for="stara-3"></label> 
+                                                          <input class="stara stara-2" id="stara-2" type="radio" name="star" /> 
+                                                          <label class="stara stara-2" for="stara-2"></label> 
+                                                          <input class="stara stara-1" id="stara-1" type="radio" name="star" /> 
+                                                          <label class="stara stara-1" for="stara-1"></label> 
+                                                      </form>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>  
+                                        <!-- information and comments that the user can enter -->
+                                        <div class="w3-container">
+                                            <input class="w3-input w3-border" type="text" placeholder="Username" required name="username">
+                                            <input class="w3-input w3-border" type="text" placeholder="Email" name="email">
+                                            <textarea rows="3" cols="60" placeholder="Comment" name="comment" form="usrform"> </textarea>
+                                            <p><i>SharkEats</i></p>
+                                            <input type="file" id="myFile" name="filename">
+                                            <button onclick="document.getElementById('review').style.display='none'" type="button" class="w3-button w3-green" style="padding:15px 75px">Submit</button>
+                                        </div>    
+                                    </form>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+
+                <!-- Read the reviews I will use the narrative as comments-->
+                <div id="ReadAReview">
+                    <!-- h2><strong>Reviews</strong></h2-->
+                    <span class="heading">User Rating</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <h4><p>3.7 average based on 12 reviews.</p></h4>
+                    <hr style="border:3px solid #f1f1f1">
+                    <div class="row">
+                      <div class="side">
+                        <div>5 star</div>
+                      </div>
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-5"></div>
+                        </div>
+                      </div>
+                      <div class="side right">
+                        <div>2</div>
+                      </div>
+                      <div class="side">
+                        <div>4 star</div>
+                      </div>
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-4"></div>
+                        </div>
+                      </div>
+                      <div class="side right">
+                        <div>1</div>
+                      </div>
+                      <div class="side">
+                        <div>3 star</div>
+                      </div>
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-3"></div>
+                        </div>
+                      </div>
+                      <div class="side right">
+                        <div>5</div>
+                      </div>
+                      <div class="side">
+                        <div>2 star</div>
+                      </div>
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-2"></div>
+                        </div>
+                      </div>
+                      <div class="side right">
+                        <div>2</div>
+                      </div>
+                      <div class="side">
+                        <div>1 star</div>
+                      </div>
+                      <div class="middle">
+                        <div class="bar-container">
+                          <div class="bar-1"></div>
+                        </div>
+                      </div>
+                      <div class="side right">
+                        <div>1</div>
+                      </div>
+                    </div>
+                    <hr>      
+                </div>
+            </div>  
+
+          <!-- SideBar Tiers Droit -->
+          <div class="SideBarRight w3-green w3-third">
+            <div class="w3-padding-large" id ="SideBarRight">
+                <!-- Localisation du resto-->
+                <div id="Localisation">
+                    <h2 class="w3-center">Localisation</h2><br>
+                    <h4 class="w3-center">BAHAMAS</h4>
+                    <h4 class="w3-center">Lucayan Archipelago</h4>
+                    <h6 class="w3-center">Latitude: 25.085249</h6>
+                    <h6 class="w3-center">Longitude: -77.208738</h6><br>
+                </div>     
+                <!-- Themes  et hyper lien-->
+                <div id="Theme">
+                    <h3 class="w3-center">Categorie</h3>
+                    <h4><p class="w3-center w3-large">
+                    #Fatal,  #Snorkeling,  #Youth,  #Unprovoked,  #2019,  #Dangerous, .....</h4></p> <!-- devrait etre des hyper liens-->
+                </div>             
+                <!-- Resto similaire-->
+                <div id="Similaire">
+                    <h3 class="w3-center"></h3><br>
+                    <p class="w3-large"></p>
+                </div>   
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="w3-third w3-green w3-padding-large">
-        <!--Location of the restaurant-->
-        <div id="Localisation">
-          <h3 class="w3-center">Jordan Lindsey's restaurant</h3><br>
-          <h2 class="w3-center">BAHAMAS</h2>
-          <h2 class="w3-center">Lucayan Archipelago</h2>
-          <h5 class="w3-center">Latitude: 25.085249</h5>
-          <h5 class="w3-center">Longitude: -77.208738</h5><br>
-        </div>
-        <!--Themes and hyperlink-->
-        <div id="Theme">
-          <h3 class="w3-center">Themes</h3><br>
-          <p class="w3-large">#Fatal,  #Snorkeling,  #Youth,  #Unprovoked,  #2019,  #Dangerous, .....</p> <!--TODO - devrait etre des hyper liens-->
-        </div>
-        <!--Similar restaurant-->
-        <div id="Similaire">
-          <h3 class="w3-center"></h3><br>
-          <p class="w3-large"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--TODO - Partie du bas mettre les avis et la descriptioin-->
-  <div class="container ">
-  </div>
+          </div> 
+
+        </div> 
+    
+    </section>
+
 </body>
 </html>
-<script src='static/JS/slideShow.js'></script>
+
+<!--Import of slider and review script-->
+<script type="text/javascript" src="W3S/restopage.js"></script>
