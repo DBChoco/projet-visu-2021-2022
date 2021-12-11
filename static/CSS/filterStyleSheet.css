@@ -33,6 +33,12 @@
   background-color: #f1f1f1;
 } 
 
+#locations-content{
+  flex-direction: column;
+  max-height: 100px;
+  overflow: scroll;
+}
+
 .nationality, .price-filter{
   margin-top: 10px;
   margin-bottom: 5px;
