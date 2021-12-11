@@ -16,6 +16,9 @@ function createResto(container){
             newDiv.setAttribute("data-danger", data[i]["Dangerous"])
             newDiv.setAttribute("data-price", data[i]["Price"])
             newDiv.setAttribute("data-country", data[i]["Country"])
+            newDiv.setAttribute("data-lat", data[i]["latitude"])
+            newDiv.setAttribute("data-lon", data[i]["longitude"])
+
             
             container.append(newDiv)
             

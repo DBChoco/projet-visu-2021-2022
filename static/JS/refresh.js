@@ -16,7 +16,6 @@ function refresh(){
         }
     }
     colorCorrect()
-    console.log("ola")
 }
 
 function filterValue(restoDiv){
@@ -31,7 +30,7 @@ function filterValue(restoDiv){
     (!fishValue && restoDiv.getAttribute("data-fish") == "false")) && 
     priceDivs[restoDiv.getAttribute("data-price")-1].checked && 
     (!dangerValue || restoDiv.getAttribute("data-danger") == "false" || (dangerValue && restoDiv.getAttribute("data-danger") == "true")) &&
-    natValue){
+    natValue && restoDistance(restoDiv)){
         return true;
     }
     else{
