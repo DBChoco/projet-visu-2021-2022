@@ -7,9 +7,9 @@
 
 .dot {
     cursor: default;   /* Changes the look of the cursor when it hovers the element */
-    fill: #0082a3;   /* Color */
+    fill: #FA3A37;   /* Color */
     fill-opacity: 0.6;   /* Transparency, from 0 (invisible) to 1 (opaque) */
-    stroke: #004d60;   /* Border color */
+    stroke: #CE1A17;   /* Border color */
     stroke-width: 1;   /* Border width in pixels */
 }
 
