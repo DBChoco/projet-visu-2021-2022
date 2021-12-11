@@ -16,6 +16,7 @@ function createResto(container){
             newDiv.setAttribute("data-danger", data[i]["Dangerous"])
             newDiv.setAttribute("data-price", data[i]["Price"])
             newDiv.setAttribute("data-country", data[i]["Country"])
+            newDiv.setAttribute("data-area", data[i]["Area"])
             newDiv.setAttribute("data-lat", data[i]["latitude"])
             newDiv.setAttribute("data-lon", data[i]["longitude"])
 
@@ -38,17 +39,11 @@ createResto(listContainer)
 function makeClick(resto){
     resto.onclick = function () {
         var idResto = this.id.substr(5);
-        alert(idResto)
-        d3.json("sharksModified.json", function(data){
-            localStorage.setItem("restoName", data[idResto]["RestoName"]);
-            localStorage.setItem("country", data[idResto]["Country"]);
-            localStorage.setItem("area", data[idResto]["Area"]);
-            localStorage.setItem("lat", data[idResto]["latitude"]);
-            localStorage.setItem("long", data[idResto]["longitude"]);
-            localStorage.setItem("description", data[idResto]["Injury"]);
-            console.log(localStorage);
-        });
-        alert("coronna")
+        localStorage.setItem("restoName", resto.getAttribute("data-name"));
+        localStorage.setItem("country", resto.getAttribute("data-country"));
+        localStorage.setItem("area", resto.getAttribute("data-area"));
+        localStorage.setItem("lat", resto.getAttribute("data-lat"));
+        localStorage.setItem("long", resto.getAttribute("data-lon"));
         location.href = "resto.html";
     };
 }
