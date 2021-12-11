@@ -1,4 +1,3 @@
-
 function fullMapDraw(){
     // An API access token is required to use the API. Replace with your own (see how to get an API token in the slides). You can request your own on the Mapbox website
     mapboxgl.accessToken = "pk.eyJ1IjoiYW50b2luZWNsYXJpbnZhbCIsImEiOiJja3c1dnNlcmEwMzFlMnFzMm44OHhmZHRqIn0.2mYK_z7Dbh7JYnKkP5077Q";
