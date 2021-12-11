@@ -38,7 +38,6 @@ createResto(listContainer)
 
 function makeClick(resto){
     resto.onclick = function () {
-        var idResto = this.id.substr(5);
         localStorage.setItem("restoName", resto.getAttribute("data-name"));
         localStorage.setItem("country", resto.getAttribute("data-country"));
         localStorage.setItem("area", resto.getAttribute("data-area"));
