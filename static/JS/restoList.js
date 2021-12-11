@@ -15,6 +15,7 @@ function createResto(container){
             newDiv.setAttribute("data-note", data[i]["Stars"])
             newDiv.setAttribute("data-danger", data[i]["Dangerous"])
             newDiv.setAttribute("data-price", data[i]["Price"])
+            newDiv.setAttribute("data-country", data[i]["Country"])
             
             container.append(newDiv)
             

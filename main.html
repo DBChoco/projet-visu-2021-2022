@@ -56,7 +56,7 @@
                     </br>
                 <input type="number" id="distance" value="0" min="0" max="20000">
             </div>
-                <h2>Filtre</h2>
+                <h2>Filter</h2>
                 <div class="price-general">
                     <h3>Price</h3>
                         <button type="button" class="collapsible">Choose price</button>
@@ -71,7 +71,7 @@
                             <div class = "price-filter">
                                 <label>
                                     💵&nbsp;💵 &nbsp;&nbsp;
-                                    <input type="checkbox" class = "price-check" id="2dollar" checked class = "larger" onclick="refresh()">
+                                    <input type="checkbox" class = "price-check" id="2dollar" checked onclick="refresh()">
                                 </label>
                             </div>
 
@@ -111,36 +111,8 @@
                         <div class = "nationality-filter">
                             <h3>Nationality</h3>
                             <button type="button" class="collapsible">Choose nationality</button>
-                            <div class="content">
-                                <div class = "nationality">
-                                    <label>
-                                        African: &nbsp;&nbsp;
-                                        <input type="checkbox" id="african" checked class = "larger">
-                                    </label>
-                                </div>
-                                
-                                <div class = "nationality">
-                                    <label>
-                                        Asian: &nbsp;&nbsp;
-                                        <input type="checkbox" id="african" checked class = "larger">
-                                    </label>
-                                </div>
-
-                                <div class = "nationality">
-                                    <label>
-                                        Ben Max & Sim: &nbsp;&nbsp;
-                                        <input type="checkbox" id="african" class = "larger">
-                                    </label>
-                                </div>
-
-                                <div class = "nationality">
-                                    <label>
-                                        Chocolat: &nbsp;&nbsp;
-                                        <input type="checkbox" id="african" checked class = "larger">
-                                    </label>
-                                </div>
-                                
-
+                            <div class="content" id="countryList">
+                                <!--Gen of the nationality list in a script further down-->
                             </div> 
                             <script>
                                 var coll = document.getElementsByClassName("collapsible");
@@ -194,6 +166,47 @@
             <div id="map"></div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(e) {
+        var listContainer = document.getElementById('countryList');
+        const natList = []
+        var fullNatList = document.getElementsByClassName("resto");
+        for (let i = 0; i < fullNatList.length; i++){
+            if (!(natList.includes(fullNatList[i].getAttribute("data-country")))){
+                natList.push(fullNatList[i].getAttribute("data-country"))
+            }
+        }
+        natList.sort(function(a, b) {
+            if(a < b) { return -1; }
+            if(a > b) { return 1; }
+            return 0;
+        })
+        
+        for (let i = 0; i < natList.length; i++){
+            var div = document.createElement('div')
+            div.setAttribute("class", "nationality");
+            var label = document.createElement("label")
+            label.innerHTML = natList[i] + "&nbsp;&nbsp;"           
+            var checkbox = document.createElement("input")
+            checkbox.setAttribute("type", "checkbox")
+            checkbox.setAttribute('id', natList[i])
+            checkbox.setAttribute("checked", "true")
+            checkbox.setAttribute("class", "natCheck")
+
+            label.append(checkbox)
+            div.append(label)
+
+            listContainer.append(div)
+        }
+
+        var allCheck = document.getElementsByClassName("natCheck")
+        for (let i = 0; i < allCheck.length; i++){
+            allCheck[i].onclick = function() { refresh()};  
+        }
+
+        })
+    </script>
 
     <!--Import of the map's script-->
     <script type="module" src="static/JS/mapScript.js"></script> 

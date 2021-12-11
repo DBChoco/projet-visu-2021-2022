@@ -27,9 +27,9 @@ input {
     background-color:white;
 }
 
-input.larger {
+input.larger, input.natCheck, input.price-check {
     /*zoom : 1.5;*/
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 footer{

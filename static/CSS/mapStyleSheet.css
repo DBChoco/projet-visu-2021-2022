@@ -1,6 +1,6 @@
 #map { 
-    width: 1000px;   /* Dimensions of the map element */
-    height: 600px;
+    width: 100%;   /* Dimensions of the map element */
+    height:600px;
 }
 
 /* CSS code for the elements that have the class dot */

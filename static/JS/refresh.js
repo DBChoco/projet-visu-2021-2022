@@ -16,6 +16,7 @@ function refresh(){
         }
     }
     colorCorrect()
+    console.log("ola")
 }
 
 function filterValue(restoDiv){
@@ -23,12 +24,14 @@ function filterValue(restoDiv){
     var fishValue = document.getElementById("fish").checked
     var priceDivs = document.getElementsByClassName("price-check")
     var dangerValue = document.getElementById("dangerZoneCheck").checked
+    var natValue = document.getElementById(restoDiv.getAttribute("data-country")).checked
 
     if (noteValue <= restoDiv.getAttribute("data-note") && 
     ((fishValue && restoDiv.getAttribute("data-fish") == "true") || 
     (!fishValue && restoDiv.getAttribute("data-fish") == "false")) && 
     priceDivs[restoDiv.getAttribute("data-price")-1].checked && 
-    (!dangerValue || restoDiv.getAttribute("data-danger") == "false" || (dangerValue && restoDiv.getAttribute("data-danger") == "true"))){
+    (!dangerValue || restoDiv.getAttribute("data-danger") == "false" || (dangerValue && restoDiv.getAttribute("data-danger") == "true")) &&
+    natValue){
         return true;
     }
     else{
@@ -51,9 +54,24 @@ function colorCorrect(){
     }
 }
 
+function sortByName(){
+    var button = document.getElementById("name-sort")
+    document.getElementById("stars-sort").style.backgroundColor = colorUnselected
+    document.getElementById("price-sort").style.backgroundColor = colorUnselected
+    console.log(button.style.backgroundColor)
+    if (button.style.backgroundColor == "rgb(28, 134, 57)"){
+        sortByNameDescending()
+    }
+    else{
+        sortByNameAscending()
+    }
+    refresh()
+}
+
 function sortByStars(){
     var button = document.getElementById("stars-sort")
     document.getElementById("price-sort").style.backgroundColor = colorUnselected
+    document.getElementById("name-sort").style.backgroundColor = colorUnselected
     console.log(button.style.backgroundColor)
     if (button.style.backgroundColor == "rgb(28, 134, 57)"){
         sortByStarsDescending()
@@ -67,8 +85,7 @@ function sortByStars(){
 function sortByPrice(){
     var button = document.getElementById("price-sort")
     document.getElementById("stars-sort").style.backgroundColor = colorUnselected
-
-    console.log(button.style.backgroundColor)
+    document.getElementById("name-sort").style.backgroundColor = colorUnselected
     if (button.style.backgroundColor == "rgb(28, 134, 57)"){
         sortByPriceDescending()
     }
@@ -143,5 +160,43 @@ function sortByPriceDescending(){
     }
 
     var button = document.getElementById("price-sort")
+    button.style.backgroundColor = colorReselected
+}
+
+function sortByNameAscending(){
+    var toSort = Array.prototype.slice.call(allResto, 0);
+    toSort.sort(function(a, b) {
+        if(a.getAttribute("data-name") < b.getAttribute("data-name")) { return -1; }
+        if(a.getAttribute("data-name") > b.getAttribute("data-name")) { return 1; }
+        return 0;
+    });
+
+    var parent = document.getElementById("container__top")
+    parent.innerHTML = "";
+
+    for(var i = 0, l = toSort.length; i < l; i++) {
+        parent.appendChild(toSort[i]);
+    }
+
+    var button = document.getElementById("name-sort")
+    button.style.backgroundColor = colorSelected
+}
+
+function sortByNameDescending(){
+    var toSort = Array.prototype.slice.call(allResto, 0);
+    toSort.sort(function(a, b) {
+        if(a.getAttribute("data-name") > b.getAttribute("data-name")) { return -1; }
+        if(a.getAttribute("data-name") < b.getAttribute("data-name")) { return 1; }
+        return 0;
+    });
+
+    var parent = document.getElementById("container__top")
+    parent.innerHTML = "";
+
+    for(var i = 0, l = toSort.length; i < l; i++) {
+        parent.appendChild(toSort[i]);
+    }
+
+    var button = document.getElementById("name-sort")
     button.style.backgroundColor = colorReselected
 }
