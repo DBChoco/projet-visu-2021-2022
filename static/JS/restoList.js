@@ -33,12 +33,22 @@ function createResto(container){
 
 var listContainer = document.getElementById('container__top');
 
-
 createResto(listContainer)
-
 
 function makeClick(resto){
     resto.onclick = function () {
+        var idResto = this.id.substr(5);
+        alert(idResto)
+        d3.json("sharksModified.json", function(data){
+            localStorage.setItem("restoName", data[idResto]["RestoName"]);
+            localStorage.setItem("country", data[idResto]["Country"]);
+            localStorage.setItem("area", data[idResto]["Area"]);
+            localStorage.setItem("lat", data[idResto]["latitude"]);
+            localStorage.setItem("long", data[idResto]["longitude"]);
+            localStorage.setItem("description", data[idResto]["Injury"]);
+            console.log(localStorage);
+        });
+        alert("coronna")
         location.href = "resto.html";
     };
 }

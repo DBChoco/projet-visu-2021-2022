@@ -426,11 +426,20 @@
                 <!-- Localisation du resto-->
                 <div id="Localisation">
                     <h2 class="w3-center">Localisation</h2><br>
-                    <h4 class="w3-center" id="country">BAHAMAS</h4>
-                    <h4 class="w3-center" id="area">Lucayan Archipelago</h4>
-                    <h6 class="w3-center" id="lat">Latitude: 25.085249</h6>
-                    <h6 class="w3-center" id="long">Longitude: -77.208738</h6><br>
-                </div>     
+                    <h4 id="countryArea">BAHAMAS - Lucayan Archipelago</h4>
+                    <h6 id="lat">Latitude: 25.085249</h6>
+                    <h6 id="long">Longitude: -77.208738</h6><br>
+                </div>
+                <script>
+                    console.log(localStorage)
+                    document.getElementById("Title").innerHTML = localStorage.getItem("restoName");
+                    document.getElementById("countryArea").innerHTML = localStorage.getItem("country") + " - " + localStorage.getItem("area");
+                    /*document.getElementById("area").innerHTML = localStorage.getItem("area");*/
+                    document.getElementById("lat").innerHTML = localStorage.getItem("lat");
+                    document.getElementById("long").innerHTML = localStorage.getItem("long");
+                    document.getElementById("restaurantDescription").innerHTML = localStorage.getItem("description");
+                    history.pushState({}, null, "resto.html#" + localStorage.getItem("restoName"));
+                </script>    
                 <!-- Themes  et hyper lien-->
                 <div id="Theme">
                     <h3 class="w3-center">Categorie</h3>

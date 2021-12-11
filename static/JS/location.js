@@ -34,7 +34,7 @@ fetch(`https://maps.googleapis.com/maps/api/geocode/json?
 //https://stackoverflow.com/questions/18883601/function-to-calculate-distance-between-two-coordinates
 function getDistanceFromLatLonInKm(lat, lon) {
     if (typeof latitude == "undefined"){
-        geoFindMe()
+        geoFindMe();
     }
     else{
         var R = 6378.1; // Radius of the earth in km
