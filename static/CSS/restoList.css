@@ -26,7 +26,7 @@
     width: 58%;
     float: left;
     padding-left: 1%;
-    padding-top: 0.35%;
+    padding-top: 5px;
     flex-direction: column;
   }
   
@@ -48,7 +48,7 @@
   }
 
   .restoBottomTextDiv{
-    padding-top: 7%;
+    padding-top: 55px;
     font-size: 14px;
     text-align: left;
     height: max-content;

@@ -10,9 +10,15 @@ function refresh(){
     for (i=0; i<allResto.length; i++){
         if (filterValue(allResto[i])){
             allResto[i].style.display = "block"
+            if (typeof document.getElementById("circle" + i) != undefined){
+                document.getElementById("circle" + i).parentElement.style.visibility = "visible"
+            }
         }
         else{
             allResto[i].style.display = "none"
+            if (typeof document.getElementById("circle" + i) != undefined){
+                document.getElementById("circle" + i).parentElement.style.visibility = "hidden"
+            }
         }
     }
     colorCorrect()
