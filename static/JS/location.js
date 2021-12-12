@@ -9,7 +9,6 @@ function geoFindMe() {
       latitude  = position.coords.latitude;
       longitude = position.coords.longitude;
       //reverseGeocodingWithGoogle(longitude, latitude)
-      return {latitude, longitude}
     }
     function error() {
       console.log("Unable to retrieve your location");
@@ -72,7 +71,6 @@ function restoDistance(resto){
     }
 }
 
-var latitude;
+var latitude
 var longitude;
-geoFindMe()
 distanceInput()

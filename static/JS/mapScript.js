@@ -29,11 +29,6 @@ function fullMapDraw(){
 
     d3.json("sharksModified.json", function(data){   // The code in the function is executed only when the data is loaded. All code requiring that the data is fully loaded shoud come here
 
-
-        console.log(data)
-
-        
-
         drawRestoPoints(data);
 
         //console.log(dots);
@@ -49,6 +44,7 @@ function fullMapDraw(){
             var fishValue = document.getElementById("fish").checked
             var priceDivs = document.getElementsByClassName("price-check")
             var dangerValue = document.getElementById("dangerZoneCheck").checked
+            var number = 0;
             dots.enter().append("circle")
                 .style("visibility", function(d){
                         if(d["Fish"]!=fishValue || d["Stars"]!=noteValue || d["Dangerous"]!=dangerValue || !(priceDivs[d["Price"]-1].checked)){  // Restaurants that do not match the filter are hidden
@@ -59,9 +55,12 @@ function fullMapDraw(){
                     })
                 .attr("class", "dot")   // The appended circles have the class dot
                 .attr("r", 7)   // Radius is 5
+                .attr("id", "circle" + number)
                 .append("title")   // A title is added to the circles (when the mouse goes over a circle, some text will show)
                     .text(function(d){   // Text of the mouseover title
+                        number ++;
                         return d["RestoName"];   // The text displayed for a circle is the name of museum it represents
+                        
                     });
 
 

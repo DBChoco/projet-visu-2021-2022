@@ -19,7 +19,6 @@ function createResto(container){
             newDiv.setAttribute("data-area", data[i]["Area"])
             newDiv.setAttribute("data-lat", data[i]["latitude"])
             newDiv.setAttribute("data-lon", data[i]["longitude"])
-
             
             container.append(newDiv)
             
