@@ -1,12 +1,16 @@
-document.addEventListener("DOMContentLoaded", function(e) {
-    var listContainer = document.getElementById('countryList');
+function nationality(){
+    
+}
+
+var listContainer = document.getElementById('countryList');
     const natList = []
-    var fullNatList = document.getElementsByClassName("resto");
-    for (let i = 0; i < fullNatList.length; i++){
-        if (!(natList.includes(fullNatList[i].getAttribute("data-country")))){
-            natList.push(fullNatList[i].getAttribute("data-country"))
-        }
+    d3.json("sharksModified.json", function(data){  
+        for (let i = 0; i < data.length; i++){
+            if (!(natList.includes(data[i]["Country"]))){
+                (natList.push(data[i]["Country"]))
+            }
     }
+
     natList.sort(function(a, b) {
         if(a < b) { return -1; }
         if(a > b) { return 1; }
@@ -34,5 +38,4 @@ document.addEventListener("DOMContentLoaded", function(e) {
     for (let i = 0; i < allCheck.length; i++){
         allCheck[i].onclick = function() { refresh()};  
     }
-
-    })
+})
