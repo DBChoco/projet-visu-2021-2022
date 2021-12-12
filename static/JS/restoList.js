@@ -19,6 +19,11 @@ function createResto(container){
             newDiv.setAttribute("data-area", data[i]["Area"])
             newDiv.setAttribute("data-lat", data[i]["latitude"])
             newDiv.setAttribute("data-lon", data[i]["longitude"])
+            newDiv.setAttribute("data-desc", data[i]["Description"])
+            newDiv.setAttribute("data-price-star", data[i]["PriceStars"])
+            newDiv.setAttribute("data-meat-star", data[i]["MeatQualityStars"])
+            newDiv.setAttribute("data-ambiance-star", data[i]["AmbianceStars"])
+
             
             container.append(newDiv)
             
@@ -42,6 +47,11 @@ function makeClick(resto){
         localStorage.setItem("area", resto.getAttribute("data-area"));
         localStorage.setItem("lat", resto.getAttribute("data-lat"));
         localStorage.setItem("long", resto.getAttribute("data-lon"));
+        localStorage.setItem("description", resto.getAttribute("data-desc"));
+        localStorage.setItem("rateText", resto.getAttribute("data-note"));
+        localStorage.setItem("priceStar", resto.getAttribute("data-price-star"));
+        localStorage.setItem("meatStar", resto.getAttribute("data-meat-star"));
+        localStorage.setItem("ambianceStar", resto.getAttribute("data-ambiance-star"));
         location.href = "resto.html";
     };
 }

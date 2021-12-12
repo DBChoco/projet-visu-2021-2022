@@ -12,6 +12,7 @@
   <script src="static/JS/restopage.js"></script>
   <script src="https://d3js.org/d3.v3.min.js"></script> <!-- d3.js import -->
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script> <!-- Mapbox library import -->
+  <script src="static/JS/stars.js"></script>
   <!--Import of the different css-->
   <link rel="stylesheet" href="static/CSS/slider.css">
   <link rel="stylesheet" href="static/CSS/mapStyleSheet.css">
@@ -212,33 +213,37 @@
                 <div class="w3-quarter w3-container w3-padding-64 d-flex justify-content-center align-items-center"  id ="MainSectionTopRight">
                     <div class="card p-3">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div class="ratings"> 
-                            <i class="fa fa-star rating-color"></i> 
-                            <i class="fa fa-star rating-color"></i> 
-                            <i class="fa fa-star rating-color"></i> 
-                            <i class="fa fa-star"></i> 
-                            <i class="fa fa-star"></i> 
+                        <div class="ratings">
+                            <script type="text/javascript">
+                                starNumber(localStorage.getItem("rateText"));
+                            </script>
                         </div>
-                            <h1 class="review-count">12 Reviews</h1>
+                            <h1 class="review-count">3 Reviews</h1>
                     </div>
                     <div class="mt-5 d-flex justify-content-between align-items-center">
                         <h3 class="review-stat">Qualité</h3>
-                        <div class="small-ratings"> 
-                            <i class="fa fa-star rating-color"></i> 
-                            <i class="fa fa-star rating-color"></i> 
-                            <i class="fa fa-star rating-color"></i> 
-                            <i class="fa fa-star"></i> 
-                            <i class="fa fa-star"></i> 
+                        <div class="small-ratings">
+                            <script type="text/javascript">
+                                starNumber(localStorage.getItem("meatStar"));
+                            </script>
                         </div>
                     </div>
                     <div class="mt-1 d-flex justify-content-between align-items-center">
-                <h3 class="review-stat">Prix</h3>
-                <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star"></i> </div>
+                        <h3 class="review-stat">Prix</h3>
+                        <div class="small-ratings">
+                            <script type="text/javascript">
+                                starNumber(localStorage.getItem("priceStar"));
+                            </script>
+                        </div>
                     </div>
                     <div class="mt-1 d-flex justify-content-between align-items-center">
-                <h3 class="review-stat">Ambiance</h3>
-                <div class="small-ratings"> <i class="fa fa-star rating-color"></i> <i class="fa fa-star rating-color"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                    </div>
+                        <h3 class="review-stat">Ambiance</h3>
+                        <div class="small-ratings">
+                            <script type="text/javascript">
+                                starNumber(localStorage.getItem("ambianceStar"));
+                            </script>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>  
@@ -352,12 +357,10 @@
                 <!-- Read the reviews I will use the narrative as comments-->
                 <div id="ReadAReview">
                     <span class="heading">User Rating</span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <h4><p>3.7 average based on 12 reviews.</p></h4>
+                    <script>
+                        starNumberUser(localStorage.getItem("rateText"));
+                    </script>
+                    <h4><p id="rateText">3.7 average based on 3 reviews.</p></h4>
                     <hr style="border:3px solid #f1f1f1">
                     <div class="row">
                       <div class="side">
@@ -438,6 +441,7 @@
                     document.getElementById("lat").innerHTML = localStorage.getItem("lat");
                     document.getElementById("long").innerHTML = localStorage.getItem("long");
                     document.getElementById("restaurantDescription").innerHTML = localStorage.getItem("description");
+                    document.getElementById("rateText").innerHTML = localStorage.getItem("rateText") + " average based on 3 reviews.";
                     history.pushState({}, null, "resto.html#" + localStorage.getItem("restoName"));
                 </script>    
                 <!-- Themes  et hyper lien-->
