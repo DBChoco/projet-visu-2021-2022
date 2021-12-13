@@ -1,7 +1,3 @@
-function nationality(){
-    
-}
-
 var listContainer = document.getElementById('countryList');
     const natList = []
     d3.json("sharksModified.json", function(data){  

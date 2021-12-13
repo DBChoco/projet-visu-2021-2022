@@ -46,21 +46,13 @@ function fullMapDraw(){
             var dangerValue = document.getElementById("dangerZoneCheck").checked
             var number = 0;
             dots.enter().append("circle")
-                .style("visibility", function(d){
-                        if(d["Fish"]!=fishValue || d["Stars"]!=noteValue || d["Dangerous"]!=dangerValue || !(priceDivs[d["Price"]-1].checked)){  // Restaurants that do not match the filter are hidden
-                            return "hidden";
-                        }
-                        else {
-                            return "visible";}
-                    })
                 .attr("class", "dot")   // The appended circles have the class dot
                 .attr("r", 7)   // Radius is 5
-                .attr("id", "circle" + number)
                 .append("title")   // A title is added to the circles (when the mouse goes over a circle, some text will show)
                     .text(function(d){   // Text of the mouseover title
+                        this.setAttribute("id", "circle" + number)
                         number ++;
                         return d["RestoName"];   // The text displayed for a circle is the name of museum it represents
-                        
                     });
 
 
