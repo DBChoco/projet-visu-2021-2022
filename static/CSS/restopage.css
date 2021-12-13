@@ -131,11 +131,6 @@ img {vertical-align: middle;}
 }
 
 
-
-
-
-
-
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
@@ -367,4 +362,114 @@ label.stara:before {
   font-family: FontAwesome
 }
 
+/* Layout of comments */
 
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #ccc;
+  border-radius: 40%;
+  display: inline-block;
+}
+
+.check{
+  height: 25px;
+  width: 25px;
+  background-color: coral;
+  border-radius: 40%;
+  display: inline-block;
+}
+
+.checkeds {
+  color: white;
+}
+
+.containers {
+  border: 2px solid green;
+  background-color: white;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0
+}
+
+.containers::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.containers img {
+  float: left;
+  margin-right: 50px;
+  border-radius: 60%;
+}
+
+.containers spans {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+@media (max-width: 500px) {
+  .container {
+      text-align: right;
+  }
+  .container img {
+      margin: auto;
+      float: left;
+      display: block;
+  }
+}
+
+
+/* Display of similar restaurant */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.cardi {
+  box-shadow: 0 4px 8px 0 white;
+}
+
+.containero {
+  padding: 0 16px;
+}
+
+.containero::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: rgb(247, 247, 247);
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: green;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: rgb(223, 223, 223);
+}
