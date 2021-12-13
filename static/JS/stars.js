@@ -21,11 +21,6 @@ function starNumberUser(numberOfStar){
 function noticeByStar(priceStar, meatStar, ambianceStar){
     var tab = [priceStar, meatStar, ambianceStar];
     var number1 = 0, number2 = 0, number3 = 0, number4 = 0, number5 = 0;
-    document.getElementsByClassName("bar-1")[0].style.width = "0%";
-    document.getElementsByClassName("bar-2")[0].style.width = "0%";
-    document.getElementsByClassName("bar-3")[0].style.width = "0%";
-    document.getElementsByClassName("bar-4")[0].style.width = "0%";
-    document.getElementsByClassName("bar-5")[0].style.width = "0%";
     for (var i = 0; i < tab.length; i++){
         console.log(tab[i])
         if (tab[i] == 1){
