@@ -4,9 +4,9 @@ function createResto(container){
         
         for (let i = 0; i < data.length; i++){
             var newDiv = createRestoDiv()
-            addRestoPhoto(newDiv)
+            addRestoPhoto(newDiv, data[i]["Picture"])
             addRestoTitle(newDiv, data[i]["RestoName"], "The best restaurant ever, probably.", data[i]["Price"], data[i]["Country"], 
-            data[i]["Area"], data[i]["Location"], data[i]["Dangerous"], data[i]["Gastro"] )
+            data[i]["Area"], data[i]["Location"], data[i]["Dangerous"], data[i]["Gastro"])
             addRestoStars(newDiv, data[i]["Stars"])
 
             newDiv.setAttribute("id", "resto" + i)
@@ -111,11 +111,11 @@ function createRestoDiv(){
     return newDiv
 }
 
-function addRestoPhoto(newDiv){
+function addRestoPhoto(newDiv, picture){
     var photoDiv = document.createElement('div')
     photoDiv.setAttribute("class", "restoPhotoDiv");
     var img = document.createElement("img");
-    img.src = "images/krusty_krab.jpg"
+    img.src = picture
     img.setAttribute("class", "restoPhoto")
     photoDiv.append(img)
     newDiv.append(photoDiv)
