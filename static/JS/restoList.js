@@ -5,7 +5,7 @@ function createResto(container){
         for (let i = 0; i < data.length; i++){
             var newDiv = createRestoDiv()
             addRestoPhoto(newDiv, data[i]["Picture"])
-            addRestoTitle(newDiv, data[i]["RestoName"], "The best restaurant ever, probably.", data[i]["Price"], data[i]["Country"], 
+            addRestoTitle(newDiv, data[i]["RestoName"], data[i]["Description"], data[i]["Price"], data[i]["Country"], 
             data[i]["Area"], data[i]["Location"], data[i]["Dangerous"], data[i]["Gastro"])
             addRestoStars(newDiv, data[i]["Stars"])
 
