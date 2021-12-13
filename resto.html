@@ -2,34 +2,36 @@
 <html>
 
 <head>
-  <meta charset="utf-8" content="width=device-width, initial-scale=1">
-  <title>SharkEats resto</title>
+    <meta charset="utf-8" content="width=device-width, initial-scale=1">
+    <title>SharkEats resto</title>
 </head>
 
 <head>
-  <!--Import of the different scripts-->
-  <script src='static/JS/split.js'> </script>
-  <script src="static/JS/restopage.js"></script>
-  <script src="https://d3js.org/d3.v3.min.js"></script> <!-- d3.js import -->
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script> <!-- Mapbox library import -->
-  <script src="static/JS/stars.js"></script>
-  <!--Import of the different css-->
-  <link rel="stylesheet" href="static/CSS/slider.css">
-  <link rel="stylesheet" href="static/CSS/mapStyleSheet.css">
-  <link rel="stylesheet" type="text/css" href="static/CSS/w3.css">
-  <link rel="stylesheet" type="text/css" href="static/CSS/style2.css">
-  <link rel="stylesheet" type="text/css" href="static/CSS/restopage.css">
-  <link rel="stylesheet" type="text/css" href="static/CSS/styleSheet.css">
-  <link rel="stylesheet" type="text/css" href="static/CSS/restopage.css">
-  <link rel="stylesheet" type="text/css" href="static/CSS/dropMenuSSheet.css">
-  <link rel="stylesheet" type="text/css" href="static/CSS/filterStyleSheet.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!--Import of the icon-->
-  <link rel="icon" type="image/x-icon" href="/images/SharkEatsIcon.png">
+    <!--Import of the different scripts-->
+    <script src='static/JS/split.js'> </script>
+    <script src="static/JS/restopage.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script> <!-- d3.js import -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>
+    <!-- Mapbox library import -->
+    <script src="static/JS/stars.js"></script>
+    <!--Import of the different css-->
+    <link rel="stylesheet" href="static/CSS/slider.css">
+    <link rel="stylesheet" href="static/CSS/mapStyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="static/CSS/w3.css">
+    <link rel="stylesheet" type="text/css" href="static/CSS/style2.css">
+    <link rel="stylesheet" type="text/css" href="static/CSS/restopage.css">
+    <link rel="stylesheet" type="text/css" href="static/CSS/styleSheet.css">
+    <link rel="stylesheet" type="text/css" href="static/CSS/restopage.css">
+    <link rel="stylesheet" type="text/css" href="static/CSS/dropMenuSSheet.css">
+    <link rel="stylesheet" type="text/css" href="static/CSS/filterStyleSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Import of the icon-->
+    <link rel="icon" type="image/x-icon" href="/images/SharkEatsIcon.png">
 </head>
 
 <body>
-    <header> <!--Header: superior part of the website-->
+    <header>
+        <!--Header: superior part of the website-->
         <img src="images/SharkEatsLogo.png" alt="logo" class="logo">
     </header>
 
@@ -37,8 +39,8 @@
     <nav>
         <section class="menu">
             <div class="navbar" id="openNav">
-            <a href="javascript:void(0)" class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</a>
-            <a href="main.html">Home</a>
+                <a href="javascript:void(0)" class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</a>
+                <a href="main.html">Home</a>
             </div>
         </section>
     </nav>
@@ -46,17 +48,17 @@
     <!--Setting up the filter-->
     <aside class="w3-bar-block w3-animate-left w3-collapse" style="display:none;z-index:3" id="mySidebar">
         <div class="filter w3-display-container w3-padding-16">
-        <i onclick="w3_close()" class="fa fa-remove w3-button w3-transparent w3-display-topright"></i>    
+            <i onclick="w3_close()" class="fa fa-remove w3-button w3-transparent w3-display-topright"></i>
             <div class="location">
                 <h2>Location</h2>
                 <input type="text" id="locations" value="locations">
-                    </br> 
-                    </br>
+                </br>
+                </br>
                 <input type="number" id="distance" value="0" min="0" max="20000">
             </div>
-                <h2>Filtre</h2>
-                <div class="price">
-                    <h3>Price</h3>
+            <h2>Filtre</h2>
+            <div class="price">
+                <h3>Price</h3>
                 <div id="price-range"></div>
             </div>
             <div class="meal">
@@ -64,7 +66,7 @@
                     <div class="fish">
                         <h3>Fish</h3>
                         <label class="switch">
-                            <input type="checkbox" id="human" checked id="poisson" >
+                            <input type="checkbox" id="human" checked id="poisson">
                             <span class="slider"></span>
                         </label>
                     </div>
@@ -75,63 +77,66 @@
                             <span class="slider"></span>
                         </label>
                     </div>
-                    <div class = "nationality-filter">
+                    <div class="nationality-filter">
                         <h3>Nationality</h3>
                         <button type="button" class="collapsible">Choose nationality</button>
                         <div class="content">
-                            <div class = "nationality">
+                            <div class="nationality">
                                 <label>
                                     African: &nbsp;&nbsp;
-                                    <input type="checkbox" id="african" checked class = "larger">
+                                    <input type="checkbox" id="african" checked class="larger">
                                 </label>
                             </div>
-                     
-                            <div class = "nationality">
+
+                            <div class="nationality">
                                 <label>
                                     Asian: &nbsp;&nbsp;
-                                   <input type="checkbox" id="african" checked class = "larger">
+                                    <input type="checkbox" id="african" checked class="larger">
                                 </label>
                             </div>
 
-                            <div class = "nationality">
+                            <div class="nationality">
                                 <label>
                                     Ben Max & Sim: &nbsp;&nbsp;
-                                    <input type="checkbox" id="african" class = "larger">
+                                    <input type="checkbox" id="african" class="larger">
                                 </label>
                             </div>
 
-                            <div class = "nationality">
+                            <div class="nationality">
                                 <label>
                                     Chocolat: &nbsp;&nbsp;
-                                    <input type="checkbox" id="african" checked class = "larger">
+                                    <input type="checkbox" id="african" checked class="larger">
                                 </label>
                             </div>
-                     
-                        </div> 
+
+                        </div>
                         <script>
                             var coll = document.getElementsByClassName("collapsible");
                             var i;
 
                             for (i = 0; i < coll.length; i++) {
-                            coll[i].addEventListener("click", function() {
-                              this.classList.toggle("active");
-                              var content = this.nextElementSibling;
-                              if (content.style.display === "block") {
-                              content.style.display = "none";
-                              } else {
-                              content.style.display = "block";
-                              }
-                            });
+                                coll[i].addEventListener("click", function () {
+                                    this.classList.toggle("active");
+                                    var content = this.nextElementSibling;
+                                    if (content.style.display === "block") {
+                                        content.style.display = "none";
+                                    } else {
+                                        content.style.display = "block";
+                                    }
+                                });
                             } 
-                        </script> 
+                        </script>
                     </div>
 
-                    <a id="#"><h3>Corps part</h3></a>
+                    <a id="#">
+                        <h3>Corps part</h3>
+                    </a>
                     <!--TODO menu des 1 parties au dessus-->
                 </form>
             </div>
             <div class="note">
-                <input id = "noteSlider" type="range" value="1" min="1" max="5" oninput="refreshNote()" onchange="refreshNote()"> 
+                <input id="noteSlider" type="range" value="1" min="1" max="5" oninput="refreshNote()"
+                    onchange="refreshNote()">
                 <output>5</output>
             </div>
             <div class="dangerZone">
@@ -150,322 +155,353 @@
 
         <!-- Division de la page en 2/3 et 1/3-->
         <div class="w3-main">
-          <!-- Slideshow container, Review, Descriptions and Comment twothird of the page-->
-          <div class = "navigation">
-            <div class="w3-white w3-container w3-twothird" id ="MainSection">
-                <!-- Slideshow container & Comment half of the page-->
-                <div class="w3-threequarter w3-padding-large w3-hide-small" id ="MainSectionTopLeft">
-                 
-                    <h1 class="w3-left" id = "Title">Jordan Lindsey's restaurant</h1><br>  <!-- titre du resto-->
-                    <div class="slideshow-container" id ="SlideshowTop">
-                        <!-- Slideshow images with number and caption text -->
-                        <div class="w3-display-container mySlides fade">
-                            <img src="images/1.jpg" style="width:100%">
-                            <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
-                                <p> Black chocolate is the best </p>
-                            </div>
-                        </div>
+            <!-- Slideshow container, Review, Descriptions and Comment twothird of the page-->
+            <div class="navigation">
+                <div class="w3-white w3-container w3-twothird" id="MainSection">
+                    <!-- Slideshow container & Comment half of the page-->
+                    <div class="w3-threequarter w3-padding-large w3-hide-small" id="MainSectionTopLeft">
 
-                        <div class="w3-display-container mySlides fade">
-                            <img src="images/2.jpg" style="width:100%">
-                            <div class="w3-display-bottomleft w3-opacity w3-container w3-green">
-                                <p> </p>
+                        <h1 class="w3-left" id="Title">Jordan Lindsey's restaurant</h1><br> <!-- titre du resto-->
+                        <div class="slideshow-container" id="SlideshowTop">
+                            <!-- Slideshow images with number and caption text -->
+                            <div class="w3-display-container mySlides fade">
+                                <img src="images/1.jpg" style="width:100%">
+                                <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
+                                    <p> Black chocolate is the best </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="w3-display-container mySlides fade">
-                            <img src="images/3.jpg" style="width:100%">
-                            <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
-                                <p> Black chocolate is the best </p>
+                            <div class="w3-display-container mySlides fade">
+                                <img src="images/2.jpg" style="width:100%">
+                                <div class="w3-display-bottomleft w3-opacity w3-container w3-green">
+                                    <p> </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="w3-display-container mySlides fade">
-                            <img src="images/4.jpg" style="width:100%">
-                            <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
-                                <p> Black chocolate is the best</p>
+                            <div class="w3-display-container mySlides fade">
+                                <img src="images/3.jpg" style="width:100%">
+                                <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
+                                    <p> Black chocolate is the best </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Slideshow en bas -->
-                        <div class="w3-row-padding w3-section" id ="SlideshowTop">
-                            <div class="w3-col s3">
-                                <img class="demo w3-opacity w3-hover-opacity-off" src="images/1.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)" title="Living room">
+                            <div class="w3-display-container mySlides fade">
+                                <img src="images/4.jpg" style="width:100%">
+                                <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
+                                    <p> Black chocolate is the best</p>
+                                </div>
                             </div>
-                            <div class="w3-col s3">
-                                <img class="demo w3-opacity w3-hover-opacity-off" src="images/2.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)" title="Dining room">
+
+                            <!-- Slideshow en bas -->
+                            <div class="w3-row-padding w3-section" id="SlideshowTop">
+                                <div class="w3-col s3">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/1.jpg"
+                                        style="width:100%;cursor:pointer" onclick="currentDiv(1)" title="Living room">
+                                </div>
+                                <div class="w3-col s3">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/2.jpg"
+                                        style="width:100%;cursor:pointer" onclick="currentDiv(2)" title="Dining room">
+                                </div>
+                                <div class="w3-col s3">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/3.jpg"
+                                        style="width:100%;cursor:pointer" onclick="currentDiv(3)" title="Bedroom">
+                                </div>
+                                <div class="w3-col s3">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/4.jpg"
+                                        style="width:100%;cursor:pointer" onclick="currentDiv(4)"
+                                        title="Second Living Room">
+                                </div>
                             </div>
-                            <div class="w3-col s3">
-                                <img class="demo w3-opacity w3-hover-opacity-off" src="images/3.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)" title="Bedroom">
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                    </div>
+
+                    <br><br><br><br>
+
+                    <!-- lien etoile:  https://bbbootstrap.com/snippets/bootstrap-5-products-star-ratings-details-73963678 -->
+                    <div class="w3-quarter w3-container w3-padding-64 d-flex justify-content-center align-items-center"
+                        id="MainSectionTopRight">
+                        <div class="card p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="ratings">
+                                    <script type="text/javascript">
+                                        starNumber(localStorage.getItem("rateText"));
+                                    </script>
+                                </div>
+                                <h1 class="review-count">3 Reviews</h1>
                             </div>
-                            <div class="w3-col s3">
-                                <img class="demo w3-opacity w3-hover-opacity-off" src="images/4.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)" title="Second Living Room">
+                            <div class="mt-5 d-flex justify-content-between align-items-center">
+                                <h3 class="review-stat">Qualité</h3>
+                                <div class="small-ratings">
+                                    <script type="text/javascript">
+                                        starNumber(localStorage.getItem("meatStar"));
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="mt-1 d-flex justify-content-between align-items-center">
+                                <h3 class="review-stat">Prix</h3>
+                                <div class="small-ratings">
+                                    <script type="text/javascript">
+                                        starNumber(localStorage.getItem("priceStar"));
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="mt-1 d-flex justify-content-between align-items-center">
+                                <h3 class="review-stat">Ambiance</h3>
+                                <div class="small-ratings">
+                                    <script type="text/javascript">
+                                        starNumber(localStorage.getItem("ambianceStar"));
+                                    </script>
+                                </div>
                             </div>
                         </div>
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                 </div>
-
-                <br><br><br><br>   
-
-                <!-- lien etoile:  https://bbbootstrap.com/snippets/bootstrap-5-products-star-ratings-details-73963678 -->
-                <div class="w3-quarter w3-container w3-padding-64 d-flex justify-content-center align-items-center"  id ="MainSectionTopRight">
-                    <div class="card p-3">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="ratings">
-                            <script type="text/javascript">
-                                starNumber(localStorage.getItem("rateText"));
-                            </script>
+                <!-- SideBar Tiers Droit -->
+                <div class="SideBarRight w3-green w3-third">
+                    <div class="w3-padding-large" id="SideBarRight">
+                        <!-- Localisation du resto-->
+                        <div id="Localisation">
+                            <h2 class="w3-center">Localisation</h2><br>
+                            <h4 id="countryArea">BAHAMAS - Lucayan Archipelago</h4>
+                            <h6 id="lat">Latitude: 25.085249</h6>
+                            <h6 id="long">Longitude: -77.208738</h6><br>
                         </div>
-                            <h1 class="review-count">3 Reviews</h1>
-                    </div>
-                    <div class="mt-5 d-flex justify-content-between align-items-center">
-                        <h3 class="review-stat">Qualité</h3>
-                        <div class="small-ratings">
-                            <script type="text/javascript">
-                                starNumber(localStorage.getItem("meatStar"));
-                            </script>
+                        <script>
+                            console.log(localStorage)
+                            document.getElementById("Title").innerHTML = localStorage.getItem("restoName");
+                            document.getElementById("countryArea").innerHTML = localStorage.getItem("country") + " - " + localStorage.getItem("area");
+                            /*document.getElementById("area").innerHTML = localStorage.getItem("area");*/
+                            document.getElementById("lat").innerHTML = localStorage.getItem("lat");
+                            document.getElementById("long").innerHTML = localStorage.getItem("long");
+                            document.getElementById("restaurantDescription").innerHTML = localStorage.getItem("description");
+                            document.getElementById("rateText").innerHTML = localStorage.getItem("rateText") + " average based on 3 reviews.";
+                            history.pushState({}, null, "resto.html#" + localStorage.getItem("restoName"));
+                        </script>
+                        <!-- Themes  et hyper lien-->
+                        <div id="Theme">
+                            <h3 class="w3-center">Categorie</h3>
+                            <h4>
+                                <p class="w3-center w3-large">
+                                    #Fatal, #Snorkeling, #Youth, #Unprovoked, #2019, #Dangerous, .....
+                            </h4>
+                            </p> <!-- devrait etre des hyper liens-->
                         </div>
-                    </div>
-                    <div class="mt-1 d-flex justify-content-between align-items-center">
-                        <h3 class="review-stat">Prix</h3>
-                        <div class="small-ratings">
-                            <script type="text/javascript">
-                                starNumber(localStorage.getItem("priceStar"));
-                            </script>
-                        </div>
-                    </div>
-                    <div class="mt-1 d-flex justify-content-between align-items-center">
-                        <h3 class="review-stat">Ambiance</h3>
-                        <div class="small-ratings">
-                            <script type="text/javascript">
-                                starNumber(localStorage.getItem("ambianceStar"));
-                            </script>
-                        </div>
+                        <!-- Resto similaire-->
+                        <div id="Similaire">
+                            <h3 class="w3-center"></h3><br>
+                            <p class="w3-large"></p>
                         </div>
                     </div>
                 </div>
-            </div>  
-
-            <!-- SideBar Tiers Droit -->
-          <div class="SideBarRight w3-green w3-third">
-            <div class="w3-padding-large" id ="SideBarRight">
-                <!-- Localisation du resto-->
-                <div id="Localisation">
-                    <h2 class="w3-center">Localisation</h2><br>
-                    <h4 id="countryArea">BAHAMAS - Lucayan Archipelago</h4>
-                    <h6 id="lat">Latitude: 25.085249</h6>
-                    <h6 id="long">Longitude: -77.208738</h6><br>
-                </div>
-                <script>
-                    console.log(localStorage)
-                    document.getElementById("Title").innerHTML = localStorage.getItem("restoName");
-                    document.getElementById("countryArea").innerHTML = localStorage.getItem("country") + " - " + localStorage.getItem("area");
-                    /*document.getElementById("area").innerHTML = localStorage.getItem("area");*/
-                    document.getElementById("lat").innerHTML = localStorage.getItem("lat");
-                    document.getElementById("long").innerHTML = localStorage.getItem("long");
-                    document.getElementById("restaurantDescription").innerHTML = localStorage.getItem("description");
-                    document.getElementById("rateText").innerHTML = localStorage.getItem("rateText") + " average based on 3 reviews.";
-                    history.pushState({}, null, "resto.html#" + localStorage.getItem("restoName"));
-                </script>    
-                <!-- Themes  et hyper lien-->
-                <div id="Theme">
-                    <h3 class="w3-center">Categorie</h3>
-                    <h4><p class="w3-center w3-large">
-                    #Fatal,  #Snorkeling,  #Youth,  #Unprovoked,  #2019,  #Dangerous, .....</h4></p> <!-- devrait etre des hyper liens-->
-                </div>             
-                <!-- Resto similaire-->
-                <div id="Similaire">
-                    <h3 class="w3-center"></h3><br>
-                    <p class="w3-large"></p>
-                </div>   
-            </div>
-          </div> 
-
-            <!-- Bas de la page-->
-            <div class="w3-white w3-container w3-twothird w3-padding-large w3-hide-small" id ="MainSectionDown">
-                <!-- Description of the Area-->
-                <div id="Description">
-                    <hr>
-                    <h2><strong>Description</strong></h2>
-                    <h4><p id="restaurantDescription">Rose Island is a small piece of land (11 miles in length) just northeast of 
-                    Nassau and has a thin peninsula which juts out seven miles east. The island has no roads. <br>
-                    Centuries ago the island was home to a pineapple plantation, then from 1969 to 2005, it was 
-                    owned by Claude Turner.</h4></p>
-                </div>
-                
-                <!-- writing a review Section Pop Up-->
-                <div id="GiveAReview" class="w3-xlarge w3-padding-32 w3-center" >
-                    <button onclick="document.getElementById('review').style.display='block'" class="w3-button w3-center w3-green w3-opacity w3-hover-opacity-off" style="padding:15px 75px">Reviews</button>
-                    <br>
-                    <div id="review" class="w3-modal">
-                        <div class="w3-modal-content w3-card-1 w3-animate-zoom" style="padding:32px;max-width:3000px">
-                            <div class="w3-container w3-center">
-                                <span onclick="document.getElementById('review').style.display='none'" class="w3-button w3-display-topright w3-green w3-large">X</span>  
-                                <h2 class="w3-wide">Reviews</h2>
+                <!-- Bas de la page-->
+                <div class="w3-white w3-container w3-twothird w3-padding-large w3-hide-small" id="MainSectionDown">
+                    <!-- Description of the Area-->
+                    <div id="Description">
+                        <hr>
+                        <h2><strong>Description</strong></h2>
+                        <h4>
+                            <p id="restaurantDescription">Rose Island is a small piece of land (11 miles in length) just
+                                northeast of
+                                Nassau and has a thin peninsula which juts out seven miles east. The island has no
+                                roads. <br>
+                                Centuries ago the island was home to a pineapple plantation, then from 1969 to 2005, it
+                                was
+                                owned by Claude Turner.
+                        </h4>
+                        </p>
+                    </div>
+                    <!-- writing a review Section Pop Up-->
+                    <div id="GiveAReview" class="w3-xlarge w3-padding-32 w3-center">
+                        <button onclick="document.getElementById('review').style.display='block'"
+                            class="w3-button w3-center w3-green w3-opacity w3-hover-opacity-off"
+                            style="padding:15px 75px">Reviews</button>
+                        <br>
+                        <div id="review" class="w3-modal">
+                            <div class="w3-modal-content w3-card-1 w3-animate-zoom"
+                                style="padding:32px;max-width:3000px">
+                                <div class="w3-container w3-center">
+                                    <span onclick="document.getElementById('review').style.display='none'"
+                                        class="w3-button w3-display-topright w3-green w3-large">X</span>
+                                    <h2 class="w3-wide">Reviews</h2>
                                     <img src="images/popup.jpg" alt="Avatar" style="width:75%;">
                                     <form action="/action_page.php">
-                                        <!-- lien etoile:  https://bbbootstrap.com/snippets/animated-rating-stars-18298447 -->                
+                                        <!-- lien etoile:  https://bbbootstrap.com/snippets/animated-rating-stars-18298447 -->
                                         <!-- Qualité -->
                                         <div class="w3-container w3-center d-flex justify-content-center">
-                                            <div class="row"> 
+                                            <div class="row">
                                                 <h2><strong> Qualité </strong></h2>
-                                                <div class="col-md-12">  
+                                                <div class="col-md-12">
                                                     <div class="stars">
-                                                        <form action=""> 
-                                                            <input class="star star-5" id="star-5" type="radio" name="star" /> 
-                                                            <label class="star star-5" for="star-5"></label> 
-                                                            <input class="star star-4" id="star-4" type="radio" name="star" /> 
-                                                            <label class="star star-4" for="star-4"></label> 
-                                                            <input class="star star-3" id="star-3" type="radio" name="star" /> 
-                                                            <label class="star star-3" for="star-3"></label> 
-                                                            <input class="star star-2" id="star-2" type="radio" name="star" /> 
-                                                            <label class="star star-2" for="star-2"></label> 
-                                                            <input class="star star-1" id="star-1" type="radio" name="star" /> 
-                                                            <label class="star star-1" for="star-1"></label> 
+                                                        <form action="">
+                                                            <input class="star star-5" id="star-5" type="radio"
+                                                                name="star" />
+                                                            <label class="star star-5" for="star-5"></label>
+                                                            <input class="star star-4" id="star-4" type="radio"
+                                                                name="star" />
+                                                            <label class="star star-4" for="star-4"></label>
+                                                            <input class="star star-3" id="star-3" type="radio"
+                                                                name="star" />
+                                                            <label class="star star-3" for="star-3"></label>
+                                                            <input class="star star-2" id="star-2" type="radio"
+                                                                name="star" />
+                                                            <label class="star star-2" for="star-2"></label>
+                                                            <input class="star star-1" id="star-1" type="radio"
+                                                                name="star" />
+                                                            <label class="star star-1" for="star-1"></label>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> 
+                                        </div>
                                         <!-- Prix -->
                                         <div class="w3-container w3-center d-flex justify-content-center">
-                                          <div class="row"> 
-                                              <h2><strong> Prix </strong></h2>
-                                              <div class="col-md-12">  
-                                                  <div class="stars">
-                                                      <form action=""> 
-                                                          <input class="starp starp-5" id="starp-5" type="radio" name="star" /> 
-                                                          <label class="starp starp-5" for="starp-5"></label> 
-                                                          <input class="starp starp-4" id="starp-4" type="radio" name="star" /> 
-                                                          <label class="starp starp-4" for="starp-4"></label> 
-                                                          <input class="starp starp-3" id="starp-3" type="radio" name="star" /> 
-                                                          <label class="starp starp-3" for="starp-3"></label> 
-                                                          <input class="starp starp-2" id="starp-2" type="radio" name="star" /> 
-                                                          <label class="starp starp-2" for="starp-2"></label> 
-                                                          <input class="starp starp-1" id="starp-1" type="radio" name="star" /> 
-                                                          <label class="starp starp-1" for="starp-1"></label> 
-                                                      </form>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                        </div>                                             
+                                            <div class="row">
+                                                <h2><strong> Prix </strong></h2>
+                                                <div class="col-md-12">
+                                                    <div class="stars">
+                                                        <form action="">
+                                                            <input class="starp starp-5" id="starp-5" type="radio"
+                                                                name="star" />
+                                                            <label class="starp starp-5" for="starp-5"></label>
+                                                            <input class="starp starp-4" id="starp-4" type="radio"
+                                                                name="star" />
+                                                            <label class="starp starp-4" for="starp-4"></label>
+                                                            <input class="starp starp-3" id="starp-3" type="radio"
+                                                                name="star" />
+                                                            <label class="starp starp-3" for="starp-3"></label>
+                                                            <input class="starp starp-2" id="starp-2" type="radio"
+                                                                name="star" />
+                                                            <label class="starp starp-2" for="starp-2"></label>
+                                                            <input class="starp starp-1" id="starp-1" type="radio"
+                                                                name="star" />
+                                                            <label class="starp starp-1" for="starp-1"></label>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!-- Ambiance -->
                                         <div class="w3-container w3-center d-flex justify-content-center">
-                                          <div class="row"> 
-                                              <h2><strong> Ambiance </strong></h2>
-                                              <div class="col-md-12">  
-                                                  <div class="stars">
-                                                      <form action=""> 
-                                                          <input class="stara stara-5" id="stara-5" type="radio" name="star" /> 
-                                                          <label class="stara stara-5" for="stara-5"></label> 
-                                                          <input class="stara stara-4" id="stara-4" type="radio" name="star" /> 
-                                                          <label class="stara stara-4" for="stara-4"></label> 
-                                                          <input class="stara stara-3" id="stara-3" type="radio" name="star" /> 
-                                                          <label class="stara stara-3" for="stara-3"></label> 
-                                                          <input class="stara stara-2" id="stara-2" type="radio" name="star" /> 
-                                                          <label class="stara stara-2" for="stara-2"></label> 
-                                                          <input class="stara stara-1" id="stara-1" type="radio" name="star" /> 
-                                                          <label class="stara stara-1" for="stara-1"></label> 
-                                                      </form>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                        </div>  
+                                            <div class="row">
+                                                <h2><strong> Ambiance </strong></h2>
+                                                <div class="col-md-12">
+                                                    <div class="stars">
+                                                        <form action="">
+                                                            <input class="stara stara-5" id="stara-5" type="radio"
+                                                                name="star" />
+                                                            <label class="stara stara-5" for="stara-5"></label>
+                                                            <input class="stara stara-4" id="stara-4" type="radio"
+                                                                name="star" />
+                                                            <label class="stara stara-4" for="stara-4"></label>
+                                                            <input class="stara stara-3" id="stara-3" type="radio"
+                                                                name="star" />
+                                                            <label class="stara stara-3" for="stara-3"></label>
+                                                            <input class="stara stara-2" id="stara-2" type="radio"
+                                                                name="star" />
+                                                            <label class="stara stara-2" for="stara-2"></label>
+                                                            <input class="stara stara-1" id="stara-1" type="radio"
+                                                                name="star" />
+                                                            <label class="stara stara-1" for="stara-1"></label>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!-- information and comments that the user can enter -->
                                         <div class="w3-container">
-                                            <input class="w3-input w3-border" type="text" placeholder="Username" required name="username">
-                                            <input class="w3-input w3-border" type="text" placeholder="Email" name="email">
-                                            <textarea rows="3" cols="60" placeholder="Comment" name="comment" form="usrform"> </textarea>
+                                            <input class="w3-input w3-border" type="text" placeholder="Username"
+                                                required name="username">
+                                            <input class="w3-input w3-border" type="text" placeholder="Email"
+                                                name="email">
+                                            <textarea rows="3" cols="60" placeholder="Comment" name="comment"
+                                                form="usrform"> </textarea>
                                             <p><i>SharkEats</i></p>
                                             <input type="file" id="myFile" name="filename">
-                                            <button onclick="document.getElementById('review').style.display='none'" type="button" class="w3-button w3-green" style="padding:15px 75px">Submit</button>
-                                        </div>    
+                                            <button onclick="document.getElementById('review').style.display='none'"
+                                                type="button" class="w3-button w3-green"
+                                                style="padding:15px 75px">Submit</button>
+                                        </div>
                                     </form>
+                                </div>
                             </div>
-                        </div> 
+                        </div>
+                    </div>
+
+
+                    <!-- Read the reviews I will use the narrative as comments-->
+                    <div id="ReadAReview">
+                        <span class="heading">User Rating</span>
+                        <script>
+                            starNumberUser(localStorage.getItem("rateText"));
+                        </script>
+                        <h4><p id="rateText">3.7 average based on 3 reviews.</p></h4>
+                        <hr style="border:3px solid #f1f1f1">
+                        <div class="row">
+                            <div class="side">
+                                <div>5 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-5"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-5">2</div>
+                            </div>
+                            <div class="side">
+                                <div>4 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-4"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-4">1</div>
+                            </div>
+                            <div class="side">
+                                <div>3 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-3"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-3">5</div>
+                            </div>
+                            <div class="side">
+                                <div>2 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-2"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-2">2</div>
+                            </div>
+                            <div class="side">
+                                <div>1 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-1"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-1">1</div>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
                 </div>
-
-
-                <!-- Read the reviews I will use the narrative as comments-->
-                <div id="ReadAReview">
-                    <span class="heading">User Rating</span>
-                    <script>
-                        starNumberUser(localStorage.getItem("rateText"));
-                    </script>
-                    <h4><p id="rateText">3.7 average based on 3 reviews.</p></h4>
-                    <hr style="border:3px solid #f1f1f1">
-                    <div class="row">
-                      <div class="side">
-                        <div>5 star</div>
-                      </div>
-                      <div class="middle">
-                        <div class="bar-container">
-                          <div class="bar-5"></div>
-                        </div>
-                      </div>
-                      <div class="side right">
-                        <div>2</div>
-                      </div>
-                      <div class="side">
-                        <div>4 star</div>
-                      </div>
-                      <div class="middle">
-                        <div class="bar-container">
-                          <div class="bar-4"></div>
-                        </div>
-                      </div>
-                      <div class="side right">
-                        <div>1</div>
-                      </div>
-                      <div class="side">
-                        <div>3 star</div>
-                      </div>
-                      <div class="middle">
-                        <div class="bar-container">
-                          <div class="bar-3"></div>
-                        </div>
-                      </div>
-                      <div class="side right">
-                        <div>5</div>
-                      </div>
-                      <div class="side">
-                        <div>2 star</div>
-                      </div>
-                      <div class="middle">
-                        <div class="bar-container">
-                          <div class="bar-2"></div>
-                        </div>
-                      </div>
-                      <div class="side right">
-                        <div>2</div>
-                      </div>
-                      <div class="side">
-                        <div>1 star</div>
-                      </div>
-                      <div class="middle">
-                        <div class="bar-container">
-                          <div class="bar-1"></div>
-                        </div>
-                      </div>
-                      <div class="side right">
-                        <div>1</div>
-                      </div>
-                    </div>
-                    <hr>      
-                </div>
-            </div>  
-
-          
-
-        </div> 
-    
+                <script>noticeByStar(localStorage.getItem("priceStar"), localStorage.getItem("meatStar"), localStorage.getItem("ambianceStar"));</script>
+            </div>
     </section>
-
 </body>
 </html>
-
 <!--Import of slider and review script-->
 <script type="text/javascript" src="static/JS/restopage.js"></script>
