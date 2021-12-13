@@ -248,6 +248,41 @@
                 </div>
             </div>  
 
+            <!-- SideBar Tiers Droit -->
+          <div class="SideBarRight w3-green w3-third">
+            <div class="w3-padding-large" id ="SideBarRight">
+                <!-- Localisation du resto-->
+                <div id="Localisation">
+                    <h2 class="w3-center">Localisation</h2><br>
+                    <h4 id="countryArea">BAHAMAS - Lucayan Archipelago</h4>
+                    <h6 id="lat">Latitude: 25.085249</h6>
+                    <h6 id="long">Longitude: -77.208738</h6><br>
+                </div>
+                <script>
+                    console.log(localStorage)
+                    document.getElementById("Title").innerHTML = localStorage.getItem("restoName");
+                    document.getElementById("countryArea").innerHTML = localStorage.getItem("country") + " - " + localStorage.getItem("area");
+                    /*document.getElementById("area").innerHTML = localStorage.getItem("area");*/
+                    document.getElementById("lat").innerHTML = localStorage.getItem("lat");
+                    document.getElementById("long").innerHTML = localStorage.getItem("long");
+                    document.getElementById("restaurantDescription").innerHTML = localStorage.getItem("description");
+                    document.getElementById("rateText").innerHTML = localStorage.getItem("rateText") + " average based on 3 reviews.";
+                    history.pushState({}, null, "resto.html#" + localStorage.getItem("restoName"));
+                </script>    
+                <!-- Themes  et hyper lien-->
+                <div id="Theme">
+                    <h3 class="w3-center">Categorie</h3>
+                    <h4><p class="w3-center w3-large">
+                    #Fatal,  #Snorkeling,  #Youth,  #Unprovoked,  #2019,  #Dangerous, .....</h4></p> <!-- devrait etre des hyper liens-->
+                </div>             
+                <!-- Resto similaire-->
+                <div id="Similaire">
+                    <h3 class="w3-center"></h3><br>
+                    <p class="w3-large"></p>
+                </div>   
+            </div>
+          </div> 
+
             <!-- Bas de la page-->
             <div class="w3-white w3-container w3-twothird w3-padding-large w3-hide-small" id ="MainSectionDown">
                 <!-- Description of the Area-->
@@ -423,40 +458,7 @@
                 </div>
             </div>  
 
-          <!-- SideBar Tiers Droit -->
-          <div class="SideBarRight w3-green w3-third">
-            <div class="w3-padding-large" id ="SideBarRight">
-                <!-- Localisation du resto-->
-                <div id="Localisation">
-                    <h2 class="w3-center">Localisation</h2><br>
-                    <h4 id="countryArea">BAHAMAS - Lucayan Archipelago</h4>
-                    <h6 id="lat">Latitude: 25.085249</h6>
-                    <h6 id="long">Longitude: -77.208738</h6><br>
-                </div>
-                <script>
-                    console.log(localStorage)
-                    document.getElementById("Title").innerHTML = localStorage.getItem("restoName");
-                    document.getElementById("countryArea").innerHTML = localStorage.getItem("country") + " - " + localStorage.getItem("area");
-                    /*document.getElementById("area").innerHTML = localStorage.getItem("area");*/
-                    document.getElementById("lat").innerHTML = localStorage.getItem("lat");
-                    document.getElementById("long").innerHTML = localStorage.getItem("long");
-                    document.getElementById("restaurantDescription").innerHTML = localStorage.getItem("description");
-                    document.getElementById("rateText").innerHTML = localStorage.getItem("rateText") + " average based on 3 reviews.";
-                    history.pushState({}, null, "resto.html#" + localStorage.getItem("restoName"));
-                </script>    
-                <!-- Themes  et hyper lien-->
-                <div id="Theme">
-                    <h3 class="w3-center">Categorie</h3>
-                    <h4><p class="w3-center w3-large">
-                    #Fatal,  #Snorkeling,  #Youth,  #Unprovoked,  #2019,  #Dangerous, .....</h4></p> <!-- devrait etre des hyper liens-->
-                </div>             
-                <!-- Resto similaire-->
-                <div id="Similaire">
-                    <h3 class="w3-center"></h3><br>
-                    <p class="w3-large"></p>
-                </div>   
-            </div>
-          </div> 
+          
 
         </div> 
     
