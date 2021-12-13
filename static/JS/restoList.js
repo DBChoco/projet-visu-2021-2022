@@ -5,13 +5,14 @@ function createResto(container){
         for (let i = 0; i < data.length; i++){
             var newDiv = createRestoDiv()
             addRestoPhoto(newDiv)
-            addRestoTitle(newDiv, data[i]["RestoName"], "The best restaurant ever, probably.", data[i]["Price"], data[i]["Country"], data[i]["Area"], data[i]["Location"], data[i]["Dangerous"] )
+            addRestoTitle(newDiv, data[i]["RestoName"], "The best restaurant ever, probably.", data[i]["Price"], data[i]["Country"], 
+            data[i]["Area"], data[i]["Location"], data[i]["Dangerous"], data[i]["Gastro"] )
             addRestoStars(newDiv, data[i]["Stars"])
 
             newDiv.setAttribute("id", "resto" + i)
             newDiv.setAttribute("data-name", data[i]["RestoName"])
             newDiv.setAttribute("data-fish", data[i]["Fish"])
-            newDiv.setAttribute("data-human", data[i]["Human"])
+            newDiv.setAttribute("data-human", data[i]["Humain"])
             newDiv.setAttribute("data-note", data[i]["Stars"])
             newDiv.setAttribute("data-danger", data[i]["Dangerous"])
             newDiv.setAttribute("data-price", data[i]["Price"])
@@ -23,6 +24,7 @@ function createResto(container){
             newDiv.setAttribute("data-price-star", data[i]["PriceStars"])
             newDiv.setAttribute("data-meat-star", data[i]["MeatQualityStars"])
             newDiv.setAttribute("data-ambiance-star", data[i]["AmbianceStars"])
+            newDiv.setAttribute("data-gourmet", data[i]["Gastro"])
 
             
             container.append(newDiv)
@@ -119,12 +121,18 @@ function addRestoPhoto(newDiv){
     newDiv.append(photoDiv)
 }
 
-function addRestoTitle(newDiv, titleResto, desResto, price, country, area, location, danger){
+function addRestoTitle(newDiv, titleResto, desResto, price, country, area, location, danger, gourmet){
     var textDiv = document.createElement('div')
     textDiv.setAttribute("class", "restoTextDiv");
     var title = document.createElement("p")
     title.appendChild(document.createTextNode(titleResto))
     title.setAttribute("class", "restoTitle")
+    if (gourmet == true){
+        title.appendChild(document.createTextNode(" | 👨‍🍳"))
+        var mouseOver = document.createElement("title")
+        mouseOver.innerHTML = "Approved by Philippe Sharkebest"
+        title.append(mouseOver)
+    }
 
     var description = document.createElement("p")
     description.appendChild(document.createTextNode(desResto))
