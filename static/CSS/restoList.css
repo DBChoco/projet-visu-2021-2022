@@ -12,13 +12,14 @@
 
 .restoPhoto{
   height: 90%;
+  width: 150px;
   padding-top: 5%;
   padding-left: 5%;
 }
 
 .restoPhotoDiv{
   height: 100%;
-  width: 173px;
+  width: fit-content;
   float: left;
 }
 
