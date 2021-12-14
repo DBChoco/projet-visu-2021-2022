@@ -38,8 +38,8 @@
     <!--Setting up the top menu-->
     <nav>
         <section class="menu">
-            <div class="navbar" id="openNav">
-                <a href="javascript:void(0)" class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</a>
+            <div class="navbar">
+                <a href="javascript:void(0)" id="openNav" class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</a>
                 <a href="main.html">Home</a>
             </div>
         </section>
@@ -152,9 +152,8 @@
 
     <!--Main section of the page resto.html-->
     <section>
-
         <!-- Division de la page en 2/3 et 1/3-->
-        <div class="w3-main">
+        <div class="w3-main" id="main">
             <!-- Slideshow container, Review, Descriptions and Comment twothird of the page-->
             <div class="navigation">
                 <div class="w3-white w3-container w3-twothird" id="MainSection">
@@ -167,7 +166,7 @@
                             <div class="w3-display-container mySlides fade">
                                 <img src="images/1.jpg" style="width:100%">
                                 <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
-                                    <p> Black chocolate is the best </p>
+                                    <p> Je crois pas non </p>
                                 </div>
                             </div>
 
@@ -188,7 +187,7 @@
                             <div class="w3-display-container mySlides fade">
                                 <img src="images/4.jpg" style="width:100%">
                                 <div class="w3-display-bottomleft w3-opacity  w3-container w3-green">
-                                    <p> Black chocolate is the best</p>
+                                    <p></p>
                                 </div>
                             </div>
 
@@ -258,9 +257,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- SideBar Tiers Droit -->
-                <div class="SideBarRight w3-green w3-third">
-                    <div class="w3-padding-large" id="SideBarRight">
+            </div>    
+
+            <!-- SideBar Tiers Droit -->
+            <div class="SideBarRight w3-green w3-third">
+                    <div class="w3-padding-large w3-green" id="SideBarRight">
                         <!-- Localisation du resto-->
                         <div id="Localisation">
                             <h2 class="w3-center">Localisation</h2><br>
@@ -285,15 +286,127 @@
                             </h4>
                             </p> <!-- devrait etre des hyper liens-->
                         </div>
+                        <!-- Espace -->
+                        <div class="w3-padding-large w3-padding-64 w3-green"  id="espace">
+                            <h3 class="w3-center"></h3>
+                            <h4><p class="w3-center w3-large">
+                        </div>  
+
                         <!-- Resto similaire-->
-                        <div id="Similaire">
-                            <h3 class="w3-center"></h3><br>
-                            <p class="w3-large"></p>
+                        <div class="row"  id="Similaire">
+                            <div class="column">
+                                <div class="cardi">
+                                    <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                    <div class="containero">
+                                        <h3>Similar restaurant 1</h3>
+                                        <p class="title">CEO & Founder</p>
+                                        <p>Location</p>
+                                        <p><button class="button">View More</button></p>
+                                    </div>
+                                </div>
+                            </div>                 
+                            <div class="column">
+                                <div class="cardi">
+                                    <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                    <div class="containero">
+                                        <h3>Similar restaurant 2</h3>
+                                        <p class="title">Art Director</p>
+                                        <p>Location</p>
+                                        <p><button class="button">View More</button></p>
+                                    </div>
+                                </div>
+                            </div>                 
+                            <div class="column">
+                                <div class="cardi">
+                                    <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                    <div class="containero">
+                                        <h3>Similar restaurant 3</h3>
+                                        <p class="title">Designer</p>
+                                        <p>Location</p>
+                                        <p><button class="button">View More</button></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="cardi">
+                                    <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                    <div class="containero">
+                                        <h3>Similar restaurant 4</h3>
+                                        <p class="title">CEO & Founder</p>
+                                        <p>Location</p>
+                                        <p><button class="button">View More</button></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="cardi">
+                                    <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                        <div class="containero">
+                                            <h3>Similar restaurant 5</h3>
+                                            <p class="title">CEO & Founder</p>
+                                            <p>Location</p>
+                                            <p><button class="button">View More</button></p>
+                                        </div>
+                                </div>
+                            </div>                  
+                            <div class="column">
+                                <div class="cardi">
+                                    <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                    <div class="containero">
+                                        <h3>Similar restaurant 6</h3>
+                                        <p class="title">Location</p>
+                                        <p>Location</p>
+                                        <p><button class="button">View More</button></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span id="dots"></span><span id="more">
+                                <div class="w3-center">  
+                                    <div class="column">
+                                        <div class="cardi">
+                                            <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                            <div class="containero">
+                                                <h3>Similar restaurant 7</h3>
+                                                <p class="title">CEO & Founder</p>
+                                                <p>Description</p>
+                                                <p><button class="button">View More</button></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column">
+                                        <div class="cardi">
+                                            <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                            <div class="containero">
+                                                <h3>Similar restaurant 2</h3>
+                                                <p class="title">CEO & Founder</p>
+                                                <p>Description</p>
+                                                <p><button class="button">View More</button></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column">
+                                        <div class="cardi">
+                                            <img src="images/krusty_krab.jpg" alt="Jane" style="width:100%">
+                                            <div class="containero">
+                                                <h3>Similar restaurant 9</h3>
+                                                <p class="title">CEO & Founder</p>
+                                                <p>Description</p>
+                                                <p><button class="button">View More</button></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>  
+                            <button onclick="myFunction()" id="myBtn" type="button" class="w3-center w3-button w3-white w3-opacity" style="padding:15px 35px">Read More</button> 
                         </div>
                     </div>
-                </div>
-                <!-- Bas de la page-->
-                <div class="w3-white w3-container w3-twothird w3-padding-large w3-hide-small" id="MainSectionDown">
+            </div>
+
+            <!-- Bas de la page-->
+            <div class="w3-white w3-container w3-twothird w3-padding-large w3-hide-small" id="MainSectionDown">
                     <!-- Description of the Area-->
                     <div id="Description">
                         <hr>
@@ -309,6 +422,124 @@
                         </h4>
                         </p>
                     </div>
+
+                    <!-- Read the reviews I will use the narrative as comments-->
+                    <div id="ReadAReview">
+                        <h2><strong>User Rating</strong></h2>
+                        <script>
+                            starNumberUser(localStorage.getItem("rateText"));
+                        </script>
+                        <h4><p id="rateText">3.7 average based on 3 reviews.</p></h4>
+                        <script>
+                            document.getElementById("restaurantDescription").innerHTML = localStorage.getItem("description");
+                            document.getElementById("rateText").innerHTML = localStorage.getItem("rateText") + " average based on 3 reviews.";
+                        </script>
+                        <hr style="border:3px solid #f1f1f1">
+                        <div class="row">
+                            <div class="side">
+                                <div>5 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-5"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-5">2</div>
+                            </div>
+                            <div class="side">
+                                <div>4 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-4"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-4">1</div>
+                            </div>
+                            <div class="side">
+                                <div>3 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-3"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-3">5</div>
+                            </div>
+                            <div class="side">
+                                <div>2 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-2"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-2">2</div>
+                            </div>
+                            <div class="side">
+                                <div>1 star</div>
+                            </div>
+                            <div class="middle">
+                                <div class="bar-container">
+                                    <div class="bar-1"></div>
+                                </div>
+                            </div>
+                            <div class="side right">
+                                <div id="numberBar-1">1</div>
+                            </div>
+                        </div>
+                        <hr style="border:3px solid #f1f1f1">   
+
+                        <!-- Part with some comments -->
+                        <div class="containers">
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot fa fa-star checkeds"></spans>
+                            <spans class="dot fa fa-star checkeds"></spans>
+                            <img src="images/avatar4.jpg" alt="Avatar" style="width:100px">
+                            <p><strong><spans>Delious food miam</spans></strong></p> 
+                            <p><h6>I was very lucky. 
+                                    I fell on a beginner surfer who fell right in my mouth</h6></p>
+                        </div>                      
+                        <div class="containers">
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot fa fa-star checkeds"></spans>
+                            <spans class="dot fa fa-star checkeds"></spans>
+                            <spans class="dot fa fa-star checkeds"></spans>
+                            <spans class="dot fa fa-star checkeds"></spans>
+                            <img src="images/avatar2.jpg" alt="Avatar" style="width:200px">
+                            <p><strong><spans>Horrible!</spans></strong></p>
+                            <p><h6>No one is better than John Doe in Cancun go there to see.</h6></p>
+                        </div>
+                        <div class="containers">
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot fa fa-star checkeds"></spans>
+                            <spans class="dot fa fa-star checkeds"></spans>
+                            <img src="images/avatar3.jpg" alt="Avatar" style="width:200px">
+                            <p><strong><spans>Un service deplorable mais une nourriture savoureuse</spans></strong></p>
+                            <p><h6>La serveuse est à peine aimable mais la nourriture est délieuce!
+                                   Chapeau bas au chef!</h6></p>
+                        </div>
+                        <div class="containers">
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <spans class="dot check fa fa-star checkeds"></spans>
+                            <img src="images/avatar1.jpg" alt="Avatar" style="width:200px">
+                            <p><strong><spans>Formidable </spans></strong></p>
+                            <p><h6>Le meilleur poumon que j'ai mangé de ma vie! </h6></p> 
+                        </div>
+                        <script>noticeByStar(localStorage.getItem("priceStar"), localStorage.getItem("meatStar"), localStorage.getItem("ambianceStar"));</script>
+                    </div>
+
                     <!-- writing a review Section Pop Up-->
                     <div id="GiveAReview" class="w3-xlarge w3-padding-32 w3-center">
                         <button onclick="document.getElementById('review').style.display='block'"
@@ -425,84 +656,11 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- Read the reviews I will use the narrative as comments-->
-                    <div id="ReadAReview">
-                        <span class="heading">User Rating</span>
-                        <script>
-                            starNumberUser(localStorage.getItem("rateText"));
-                        </script>
-                        <h4><p id="rateText">3.7 average based on 3 reviews.</p></h4>
-                        <script>
-                            document.getElementById("restaurantDescription").innerHTML = localStorage.getItem("description");
-                            document.getElementById("rateText").innerHTML = localStorage.getItem("rateText") + " average based on 3 reviews.";
-                        </script>
-                        <hr style="border:3px solid #f1f1f1">
-                        <div class="row">
-                            <div class="side">
-                                <div>5 star</div>
-                            </div>
-                            <div class="middle">
-                                <div class="bar-container">
-                                    <div class="bar-5"></div>
-                                </div>
-                            </div>
-                            <div class="side right">
-                                <div id="numberBar-5">2</div>
-                            </div>
-                            <div class="side">
-                                <div>4 star</div>
-                            </div>
-                            <div class="middle">
-                                <div class="bar-container">
-                                    <div class="bar-4"></div>
-                                </div>
-                            </div>
-                            <div class="side right">
-                                <div id="numberBar-4">1</div>
-                            </div>
-                            <div class="side">
-                                <div>3 star</div>
-                            </div>
-                            <div class="middle">
-                                <div class="bar-container">
-                                    <div class="bar-3"></div>
-                                </div>
-                            </div>
-                            <div class="side right">
-                                <div id="numberBar-3">5</div>
-                            </div>
-                            <div class="side">
-                                <div>2 star</div>
-                            </div>
-                            <div class="middle">
-                                <div class="bar-container">
-                                    <div class="bar-2"></div>
-                                </div>
-                            </div>
-                            <div class="side right">
-                                <div id="numberBar-2">2</div>
-                            </div>
-                            <div class="side">
-                                <div>1 star</div>
-                            </div>
-                            <div class="middle">
-                                <div class="bar-container">
-                                    <div class="bar-1"></div>
-                                </div>
-                            </div>
-                            <div class="side right">
-                                <div id="numberBar-1">1</div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-                <script>noticeByStar(localStorage.getItem("priceStar"), localStorage.getItem("meatStar"), localStorage.getItem("ambianceStar"));</script>
             </div>
+        </div>
     </section>
 </body>
 </html>
+
 <!--Import of slider and review script-->
 <script type="text/javascript" src="static/JS/restopage.js"></script>
