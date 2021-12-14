@@ -11,6 +11,8 @@
     <script src="static/JS/mapScript.js"></script>  <!-- Map script import -->
     <script src="static/JS/split.js"></script>
     <script src="static/JS/refresh.js"></script>
+    <script src="static/JS/researchBar.js"></script>
+
     
     <!--Import of the different css-->
     <link rel="stylesheet"  type="text/css" href="static/CSS/styleSheet.css">
@@ -19,6 +21,7 @@
     <link rel="stylesheet" href="static/CSS/mapStyleSheet.css">
     <link rel="stylesheet" href="static/CSS/slider.css">
     <link rel="stylesheet" href="static/CSS/restoList.css">
+    <link rel="stylesheet"  type="text/css" href="static/CSS/researchBarStyleSheet.css">
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet'></link>
     <!--Import of the icon-->
     <link rel="icon" type="image/x-icon" href="/images/SharkEatsIcon.png">
@@ -35,19 +38,24 @@
             <div class="navbar">
                 <a href="#home">Home</a>
                 <div class="dropdown">
-                <button class="dropbtn">Sort by:
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a id="name-sort" onclick="sortByName()">Name</a>
-                    <a id="stars-sort" onclick="sortByStars()">Stars</a>
-                    <a id="price-sort" onclick="sortByPrice()" >Price</a>
+                    <button class="dropbtn">Sort by:
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a id="name-sort" onclick="sortByName()">Name</a>
+                        <a id="stars-sort" onclick="sortByStars()">Stars</a>
+                        <a id="price-sort" onclick="sortByPrice()" >Price</a>
+                    </div>
                 </div>
+                <div class="search-container">
+                    <form>
+                        <input type="text" placeholder="Search.." onkeypress="return pressEnter(event)" id="searchtext" class="searchtextClass">
+                        <input type="button" name="button" onclick="makeResearch();" class="button">
+                    </form>
                 </div>
             </div>  
         </section>
     </nav>
-
     <!--Setting up the filter-->
     <aside> 
         <div class="filter" id="filter">
