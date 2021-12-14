@@ -33,14 +33,12 @@ function filterValue(restoDiv){
     var dangerValue = document.getElementById("dangerZoneCheck").checked
     var natValue = document.getElementById(restoDiv.getAttribute("data-country")).checked
 
-    console.log(restoDiv.getAttribute("data-human"))
-
     if (noteValue <= restoDiv.getAttribute("data-note") && 
     ((fishValue && restoDiv.getAttribute("data-fish") == "true") || 
     (!fishValue && restoDiv.getAttribute("data-fish") == "false")) && 
     priceDivs[restoDiv.getAttribute("data-price")-1].checked && 
     (!dangerValue || restoDiv.getAttribute("data-danger") == "false" || (dangerValue && restoDiv.getAttribute("data-danger") == "true")) &&
-    natValue && restoDistance(restoDiv) &&   ((humanValue && restoDiv.getAttribute("data-fish") == "human") || 
+    natValue && restoDistance(restoDiv) &&   ((humanValue && restoDiv.getAttribute("data-human") == "true") ||
     (!humanValue && restoDiv.getAttribute("data-human") == "false")) &&
     (!gourmetValue || (gourmetValue && restoDiv.getAttribute("data-gourmet") == "true"))){
         return true;

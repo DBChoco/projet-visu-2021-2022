@@ -25,7 +25,6 @@ function createResto(container){
             newDiv.setAttribute("data-meat-star", data[i]["MeatQualityStars"])
             newDiv.setAttribute("data-ambiance-star", data[i]["AmbianceStars"])
             newDiv.setAttribute("data-gourmet", data[i]["Gastro"])
-
             
             container.append(newDiv)
             
