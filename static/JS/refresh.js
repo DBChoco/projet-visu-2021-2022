@@ -33,10 +33,6 @@ function filterValue(restoDiv){
     var dangerValue = document.getElementById("dangerZoneCheck").checked
     var natValue = document.getElementById(restoDiv.getAttribute("data-country")).checked
 
-    if (restoDiv.getAttribute("data-human")== "true"){
-        console.log(restoDiv.getAttribute("data-fish"))
-    }
-
     if (noteValue <= restoDiv.getAttribute("data-note") && 
     ((fishValue && restoDiv.getAttribute("data-fish") == "true") || 
     (!fishValue && restoDiv.getAttribute("data-fish") == "false")) && 
