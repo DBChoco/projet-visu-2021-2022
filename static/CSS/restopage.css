@@ -473,3 +473,25 @@ label.stara:before {
 .button:hover {
   background-color: rgb(223, 223, 223);
 }
+
+/* Découpe bouchère */
+#human_cut {
+  width: 400px;
+  height: 1000px; 
+}
+
+path {
+  stroke: #000000;
+  stroke-width: 10px;
+  fill: #ffffff; 
+}
+
+.unselected{
+  stroke: #000000;
+  stroke-width: 10px;
+}
+
+.selected{
+  stroke: #1a1a96;
+  stroke-width: 25px;
+}
